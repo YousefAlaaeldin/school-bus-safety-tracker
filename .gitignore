@@ -1,0 +1,14 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.expo/
+dist/
+.next/
+ios/
+android/
+*.log
+supabase/.temp/
+supabase/.branches/
+supabase/functions/.env
+coverage/
