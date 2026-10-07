@@ -32,4 +32,5 @@ Format:
 - T1.54-T1.60 (web dashboard): the browser extension was not connected, so I could not click through the UI. Please run `pnpm --filter @sst/web dev`, log in at http://localhost:3000/en/dashboard/login as admin-a@example.com / password123 and check: students list shows 5, student edit page + guardians panel work, CSV import with apps/web/public/roster-template.csv works.
 - T2.12: rebuild dev client (eas build --profile development) before testing (expo-sqlite, expo-location, netinfo added).
 - T2.14: HELPER_A sees trips after running `select public.generate_trips(current_date)` in Studio on a weekday.
+- T2.22: in airplane mode tap 3 boards, the badge shows 3; turn airplane mode off, it syncs to 0 and the server shows 3 events.
 <!-- executor adds "- T3.16: verify background pings arrive with screen locked" etc. -->

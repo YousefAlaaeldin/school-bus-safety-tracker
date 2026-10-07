@@ -197,6 +197,12 @@
       "endAnyway": "End anyway",
       "reason": "Reason (required)",
       "cancel": "Cancel"
+    },
+    "sync": {
+      "offline": "Offline",
+      "failedTitle": "Some actions could not be saved",
+      "dismiss": "Dismiss",
+      "close": "Close"
     }
   },
   "admin": {
