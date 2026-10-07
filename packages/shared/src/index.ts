@@ -6,3 +6,4 @@ export * from './queue/memoryStore';
 export * from './trip/view';
 export * from './geo';
 export * from './time';
+export * from './phone';
