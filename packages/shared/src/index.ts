@@ -8,3 +8,4 @@ export * from './geo';
 export * from './time';
 export * from './phone';
 export type { Database, Json, Tables, TablesInsert, TablesUpdate, Enums } from './db.types';
+export * from './notificationRoute';
