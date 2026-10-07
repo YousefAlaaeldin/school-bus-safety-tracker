@@ -1,0 +1,88 @@
+{
+  "common": {
+    "appName": "SafeRide",
+    "ok": "OK",
+    "cancel": "Cancel",
+    "retry": "Retry",
+    "save": "Save",
+    "loading": "Loading…",
+    "back": "Back",
+    "signOut": "Sign out",
+    "language": "Language",
+    "arabic": "العربية",
+    "english": "English"
+  },
+  "errors": {
+    "NOT_AUTHENTICATED": "Please sign in to continue.",
+    "NOT_AUTHORIZED": "You are not allowed to do this.",
+    "NOT_FOUND": "We could not find what you were looking for.",
+    "INVALID_STATE": "This action is not available right now.",
+    "INVALID_INPUT": "Please check the details and try again.",
+    "STUDENTS_ON_BOARD": "Some students are still on the bus.",
+    "PAST_CUTOFF": "The cutoff time has passed.",
+    "UNDO_WINDOW_PASSED": "It is too late to undo this.",
+    "INVITE_INVALID": "This code is not valid.",
+    "INVITE_USED": "This code has already been used.",
+    "INVITE_EXPIRED": "This code has expired.",
+    "NETWORK": "No connection. Check your internet and try again.",
+    "UNKNOWN": "Something went wrong. Please try again."
+  },
+  "notif": {
+    "boarded": {
+      "title": "{{child}} is on the bus",
+      "body": "Boarded {{bus}} at {{time}}. Tap to track."
+    },
+    "picked_up": {
+      "title": "{{child}} was picked up",
+      "body": "Picked up by {{bus}} at {{time}}. Tap to track."
+    },
+    "no_show": {
+      "title": "{{child}} was not picked up",
+      "body": "{{bus}} left your stop at {{time}}. Contact the school if this is unexpected."
+    },
+    "eta_dropoff": {
+      "title": "Arriving in about {{minutes}} min",
+      "body": "{{bus}} will reach {{stop}} at about {{time}} with {{child}}."
+    },
+    "eta_pickup": {
+      "title": "Bus arriving in about {{minutes}} min",
+      "body": "{{bus}} will reach {{stop}} at about {{time}}. Please have {{child}} ready."
+    },
+    "dropped": {
+      "title": "{{child}} was dropped off",
+      "body": "Dropped off at {{stop}} at {{time}}."
+    },
+    "arrived_school": {
+      "title": "{{child}} arrived at school",
+      "body": "{{bus}} arrived at {{time}}."
+    },
+    "returned_to_school": {
+      "title": "{{child}} is returning to school",
+      "body": "Drop-off was not possible. {{child}} is returning to school on {{bus}}. The school will contact you."
+    },
+    "missing_child": {
+      "title": "{{child}} was not on the bus",
+      "body": "{{child}} was not on {{bus}} at roll call ({{time}}). Please contact the school."
+    },
+    "roll_call_missing": {
+      "title": "{{bus}}: {{count}} missing at roll call",
+      "body": "{{names}}"
+    },
+    "trip_forced_end": {
+      "title": "{{bus}} ended the trip with {{count}} unaccounted",
+      "body": "Reason: {{reason}}"
+    },
+    "lost_contact": {
+      "title": "Lost contact with {{bus}}",
+      "body": "Last location update at {{time}}."
+    },
+    "stationary": {
+      "title": "{{bus}} has not moved for {{minutes}} min",
+      "body": "Check whether the bus needs help."
+    },
+    "overdue_trip": {
+      "title": "{{bus}} trip is overdue",
+      "body": "Started at {{time}} and has not ended."
+    }
+  }
+}
