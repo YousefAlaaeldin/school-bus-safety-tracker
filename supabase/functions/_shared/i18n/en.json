@@ -429,6 +429,36 @@
       "labelRequired": "This label is required.",
       "inUse": "This bus is used by a route. Remove it from its routes first.",
       "deleteConfirm": "Delete this bus?"
+    },
+    "staff": {
+      "title": "Staff",
+      "members": "Members",
+      "invites": "Pending invites",
+      "name": "Name",
+      "contact": "Phone / email",
+      "role": "Role",
+      "created": "Invited",
+      "roles": {
+        "admin": "Administrator",
+        "helper": "Bus helper"
+      },
+      "remove": "Remove",
+      "removeConfirm": "Remove this person from the school?",
+      "deleteInvite": "Delete invite",
+      "emptyMembers": "No members.",
+      "emptyInvites": "No pending invites.",
+      "invite": {
+        "title": "Invite someone",
+        "displayName": "Name (optional)",
+        "phone": "Phone (UAE mobile)",
+        "email": "Email",
+        "send": "Invite",
+        "invalidPhone": "Enter a valid UAE mobile number.",
+        "invalidEmail": "Enter a valid email.",
+        "done": "Invite saved.",
+        "addedNow": "This person already has an account, so they were added right away."
+      },
+      "cancel": "Cancel"
     }
   }
 }
