@@ -165,3 +165,10 @@ from (values
   ('f0000000-0000-0000-0000-000000000005', '11111111-1111-1111-1111-111111111111', '+971500000099', 'pending', null),
   ('f0000000-0000-0000-0000-0000000000b1', '22222222-2222-2222-2222-222222222222', '+971500000103', 'approved', 'b0000000-0000-0000-0000-000000000001')
 ) as l(student_id, school_id, phone, status, approver);
+
+-- Vault secrets used by pg_cron to call Edge Functions.
+-- LOCAL DEMO VALUES ONLY (the service-role key below is the public Supabase local-development key).
+select vault.create_secret('http://host.docker.internal:54321', 'project_url');
+select vault.create_secret(
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImV4cCI6MTk4MzgxMjk5Nn0.EGIM96RAZx35lJzdJsyH-qQwv8Hdp7fsn3W0YpN81IU',
+  'service_role_key');
