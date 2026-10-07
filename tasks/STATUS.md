@@ -47,7 +47,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T1.22 — `generate_trips` ⚠ hard
 - [x] T1.23 — RLS tests: trips and bus visibility ⚠ hard
 - [x] T1.24 — `import_roster` RPC
-- [ ] T1.25 — Generate DB types
+- [x] T1.25 — Generate DB types
 
 ## Phase 1b — App and web foundation (landing pages, sign-in, dashboard CRUD)  ([phase-1-apps.md](phase-1-apps.md))
 - [ ] T1.30 — Supabase client (mobile)
