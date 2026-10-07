@@ -678,6 +678,14 @@ isOneToOne: false
 "cancel_absence":
 { Args: { "p_absence_id": string }; Returns: undefined
                            },
+"claim_due_notifications":
+{ Args: { "p_limit"?: number }; Returns: {
+              "id": string,"locale": Database["public"]['Enums']["locale_code"],"params": Json,"student_id": string,"tokens": (string)[],"trip_id": string,"type": Database["public"]['Enums']["notification_type"]
+            }[]
+                           },
+"complete_notification":
+{ Args: { "p_error": string,"p_id": string,"p_status": Database["public"]['Enums']["notification_status"],"p_ticket_ids": (string)[],"p_tokens": (string)[] }; Returns: undefined
+                           },
 "confirm_roll_call":
 { Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_trip_id": string }; Returns: Json
                            },
@@ -693,8 +701,16 @@ isOneToOne: false
 "get_my_context":
 { Args: Record<PropertyKey, never>; Returns: Json
                            },
+"get_unchecked_receipts":
+{ Args: { "p_limit"?: number }; Returns: {
+              "id": string,"ticket_ids": (string)[],"tokens": (string)[]
+            }[]
+                           },
 "import_roster":
 { Args: { "p_rows": Json,"p_school_id": string }; Returns: Json
+                           },
+"ingest_pings":
+{ Args: { "p_pings": Json,"p_trip_id": string }; Returns: Json
                            },
 "invite_staff":
 { Args: { "p_display_name": string,"p_email": string,"p_phone": string,"p_role": Database["public"]['Enums']["membership_role"],"p_school_id": string }; Returns: Json
@@ -704,6 +720,9 @@ isOneToOne: false
                            },
 "mark_no_show":
 { Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_student_id": string,"p_trip_id": string }; Returns: Json
+                           },
+"mark_receipts_checked":
+{ Args: { "p_dead_tokens": (string)[],"p_ids": (string)[] }; Returns: undefined
                            },
 "mark_returned_to_school":
 { Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_student_id": string,"p_trip_id": string }; Returns: Json

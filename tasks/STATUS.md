@@ -125,7 +125,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [ ] T3.11 — Parent live map
 - [ ] T3.12 — Report absence screen
 - [ ] T3.13 — Parent history
-- [ ] T3.14 — `ingest_pings` RPC
+- [x] T3.14 — `ingest_pings` RPC
 - [ ] T3.15 — Ping queue + uploader
 - [ ] T3.16 — Background location task + start/stop with the trip ⚠ hard
 - [ ] T3.17 — Location permission flow
