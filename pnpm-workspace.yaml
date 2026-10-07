@@ -4,4 +4,6 @@ packages:
   - tools/*
 allowBuilds:
   esbuild: true
+  unrs-resolver: false
+  sharp: false
 nodeLinker: hoisted
