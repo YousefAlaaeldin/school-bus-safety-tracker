@@ -359,6 +359,12 @@ isOneToOne: false
 isOneToOne: false
       referencedRelation: "stops"
       referencedColumns: ["id"]
+    },{
+      foreignKeyName: "route_stops_stop_id_fkey"
+      columns: ["stop_id"]
+isOneToOne: false
+      referencedRelation: "stops_with_coords"
+      referencedColumns: ["id"]
     }
                   ]
                 },"routes": {
@@ -492,6 +498,12 @@ isOneToOne: false
       referencedRelation: "stops"
       referencedColumns: ["id"]
     },{
+      foreignKeyName: "student_assignments_stop_id_fkey"
+      columns: ["stop_id"]
+isOneToOne: false
+      referencedRelation: "stops_with_coords"
+      referencedColumns: ["id"]
+    },{
       foreignKeyName: "student_assignments_student_id_fkey"
       columns: ["student_id"]
 isOneToOne: false
@@ -567,6 +579,12 @@ isOneToOne: false
       referencedRelation: "stops"
       referencedColumns: ["id"]
     },{
+      foreignKeyName: "trip_students_stop_id_fkey"
+      columns: ["stop_id"]
+isOneToOne: false
+      referencedRelation: "stops_with_coords"
+      referencedColumns: ["id"]
+    },{
       foreignKeyName: "trip_students_student_id_fkey"
       columns: ["student_id"]
 isOneToOne: false
@@ -626,7 +644,26 @@ isOneToOne: false
                 }
           }
           Views: {
-            [_ in never]: never
+            "stops_with_coords": {
+                  Row: {
+                    "area": string | null,"building": string | null,"created_at": string | null,"id": string | null,"is_school": boolean | null,"label_ar": string | null,"label_en": string | null,"landmark_notes": string | null,"lat": number | null,"lng": number | null,"location": unknown,"makani_number": string | null,"school_id": string | null
+                  }
+                  Insert: {
+                           "area"?: string | null,"building"?: string | null,"created_at"?: string | null,"id"?: string | null,"is_school"?: boolean | null,"label_ar"?: string | null,"label_en"?: string | null,"landmark_notes"?: string | null,"lat"?: never,"lng"?: never,"location"?: unknown,"makani_number"?: string | null,"school_id"?: string | null
+                         }
+                        Update: {
+                           "area"?: string | null,"building"?: string | null,"created_at"?: string | null,"id"?: string | null,"is_school"?: boolean | null,"label_ar"?: string | null,"label_en"?: string | null,"landmark_notes"?: string | null,"lat"?: never,"lng"?: never,"location"?: unknown,"makani_number"?: string | null,"school_id"?: string | null
+                         }
+                        Relationships: [
+                    {
+      foreignKeyName: "stops_school_id_fkey"
+      columns: ["school_id"]
+isOneToOne: false
+      referencedRelation: "schools"
+      referencedColumns: ["id"]
+    }
+                  ]
+                }
           }
           Functions: {
             "acknowledge_alert":
