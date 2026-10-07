@@ -302,5 +302,18 @@
         "body": "Email: support@saferide.example (placeholder)."
       }
     }
+  },
+  "dashboard": {
+    "auth": {
+      "loginTitle": "School dashboard",
+      "loginHelp": "Sign in with your school email.",
+      "email": "Email",
+      "password": "Password",
+      "signIn": "Sign in",
+      "wrongCredentials": "Wrong email or password.",
+      "noAccessTitle": "No access",
+      "noAccessBody": "This account is not an administrator of any school. Ask your school to add you.",
+      "signOut": "Sign out"
+    }
   }
 }
