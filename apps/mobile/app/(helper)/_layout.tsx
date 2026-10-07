@@ -8,6 +8,7 @@ import { stopBusTracking } from '@/location/backgroundTask';
 import { supabase } from '@/lib/supabase';
 import { startQueueRunner } from '@/queue/runner';
 import { SyncBadge } from '@/queue/SyncBadge';
+import { setSentryRole } from '@/lib/sentry';
 import { useSession } from '@/state/session';
 import { spacing } from '@/ui/tokens';
 
@@ -18,6 +19,7 @@ export default function HelperLayout() {
 
   useEffect(() => {
     setLastRole('helper');
+    setSentryRole('helper');
   }, [setLastRole]);
 
   useEffect(() => startQueueRunner(queryClient), [queryClient]);

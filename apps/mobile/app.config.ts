@@ -42,6 +42,8 @@ const config: ExpoConfig = {
     ],
     'expo-notifications',
     'expo-task-manager',
+    // Source map upload needs SENTRY_AUTH_TOKEN at build time (set up in T6.01).
+    '@sentry/react-native/expo',
   ],
   // Localized app name and iOS permission prompts (Expo: Localization → Translating app metadata).
   locales: {

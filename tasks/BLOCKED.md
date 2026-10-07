@@ -38,4 +38,5 @@ Format:
 - T2.22: in airplane mode tap 3 boards, the badge shows 3; turn airplane mode off, it syncs to 0 and the server shows 3 events.
 - T2.23: rebuild dev client (react-native-maps added). The map must render on Android (needs GOOGLE_MAPS_ANDROID_API_KEY in the build env) and iOS.
 - T3.16 / T3.17 / T3.18: rebuild dev client (eas build --profile development): expo-task-manager background location, permissions, expo-intent-launcher, localized iOS strings. Then run H3.1 (background tracking + push on two phones).
+- T5.03: rebuild dev client (Sentry native module). Set EXPO_PUBLIC_SENTRY_DSN in apps/mobile/.env when you have a Sentry project (also NEXT_PUBLIC_SENTRY_DSN / SENTRY_DSN for the web app); without a DSN Sentry does nothing.
 <!-- executor adds "- T3.16: verify background pings arrive with screen locked" etc. -->

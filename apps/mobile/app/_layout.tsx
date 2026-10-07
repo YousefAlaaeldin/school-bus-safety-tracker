@@ -5,9 +5,12 @@ import { useEffect, useState } from 'react';
 import { initI18n } from '@/i18n';
 import { AuthGate } from '@/auth/AuthGate';
 import { AppProviders } from '@/providers/AppProviders';
+import { initSentry, wrap } from '@/lib/sentry';
 import { fontAssets } from '@/ui/fonts';
 
-export default function RootLayout() {
+initSentry();
+
+function RootLayout() {
   const [ready, setReady] = useState(false);
   const [fontsLoaded, fontError] = useFonts(fontAssets);
 
@@ -32,3 +35,5 @@ export default function RootLayout() {
     </AppProviders>
   );
 }
+
+export default wrap(RootLayout);
