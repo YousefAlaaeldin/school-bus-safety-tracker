@@ -175,6 +175,18 @@
       "returnConfirm": "Return {{name}} to school?",
       "map": "Map",
       "endTrip": "End trip"
+    },
+    "pickup": {
+      "title": "Pick-up",
+      "picked": "Picked up: {{boarded}} / {{total}}",
+      "pickedUp": "Picked up",
+      "noShow": "No-show",
+      "pickedToast": "{{name}} picked up",
+      "noShowToast": "{{name}} marked no-show",
+      "arrived": "Arrived at school",
+      "skipToSchool": "Skip to school",
+      "arriveConfirm": "{{count}} students on board. Confirm arrival at school?",
+      "confirm": "Confirm"
     }
   },
   "admin": {

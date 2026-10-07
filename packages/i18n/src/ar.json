@@ -175,6 +175,18 @@
       "returnConfirm": "هل تريد إعادة {{name}} إلى المدرسة؟",
       "map": "الخريطة",
       "endTrip": "إنهاء الرحلة"
+    },
+    "pickup": {
+      "title": "الاصطحاب",
+      "picked": "تم الاصطحاب: {{boarded}} / {{total}}",
+      "pickedUp": "تم الاصطحاب",
+      "noShow": "لم يحضر",
+      "pickedToast": "تم اصطحاب {{name}}",
+      "noShowToast": "تم تسجيل عدم حضور {{name}}",
+      "arrived": "الوصول إلى المدرسة",
+      "skipToSchool": "الانتقال إلى المدرسة",
+      "arriveConfirm": "{{count}} طلاب في الحافلة. هل تؤكد الوصول إلى المدرسة؟",
+      "confirm": "تأكيد"
     }
   },
   "admin": {
