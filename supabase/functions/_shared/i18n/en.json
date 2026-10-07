@@ -409,7 +409,16 @@
     },
     "live": {
       "title": "Live board",
-      "placeholder": "Live bus positions will appear here."
+      "placeholder": "Live bus positions will appear here.",
+      "noTrips": "No active trips right now.",
+      "noMapKey": "The map needs a Google Maps key (NEXT_PUBLIC_GOOGLE_MAPS_API_KEY). The list below still updates live.",
+      "onBoard": "On board",
+      "missing": "Missing",
+      "dropped": "Dropped",
+      "updated": "Updated {{seconds}} s ago",
+      "noPosition": "No position yet",
+      "alerts": "{{count}} open alerts",
+      "details": "Details"
     },
     "students": {
       "title": "Students",
