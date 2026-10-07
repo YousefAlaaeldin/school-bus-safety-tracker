@@ -1,8 +1,8 @@
 import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
+import { Slot } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { I18nextProvider } from 'react-i18next';
-import { i18next, initI18n } from '@/i18n';
+import { initI18n } from '@/i18n';
+import { AppProviders } from '@/providers/AppProviders';
 import { fontAssets } from '@/ui/fonts';
 
 export default function RootLayout() {
@@ -23,8 +23,8 @@ export default function RootLayout() {
   if (!ready || (!fontsLoaded && !fontError)) return null;
 
   return (
-    <I18nextProvider i18n={i18next}>
-      <Stack screenOptions={{ headerShown: false }} />
-    </I18nextProvider>
+    <AppProviders>
+      <Slot />
+    </AppProviders>
   );
 }
