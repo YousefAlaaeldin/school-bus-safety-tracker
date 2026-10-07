@@ -25,7 +25,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 ## Phase 1a — Database foundation  ([phase-1-database.md](phase-1-database.md))
 - [x] T1.01 — Extensions and private schema
 - [x] T1.02 — Enums
-- [ ] T1.03 — Schools and calendar
+- [x] T1.03 — Schools and calendar
 - [ ] T1.04 — Profiles, memberships, staff invites
 - [ ] T1.05 — Students, guardian links, invite codes
 - [ ] T1.06 — Buses, stops, routes, schedules, assignments
