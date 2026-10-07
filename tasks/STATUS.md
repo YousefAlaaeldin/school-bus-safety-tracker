@@ -90,7 +90,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T2.04 — `confirm_roll_call`
 - [x] T2.05 — `mark_dropped`, `undo_dropped`
 - [x] T2.06 — `mark_no_show`, `undo_no_show`, `arrive_at_school`
-- [ ] T2.07 — `mark_returned_to_school`, `end_trip`
+- [x] T2.07 — `mark_returned_to_school`, `end_trip`
 - [ ] T2.08 — `report_absence`, `cancel_absence`
 - [ ] T2.09 — Regenerate types
 - [x] T2.10 — Offline action queue core ⚠ hard

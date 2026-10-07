@@ -644,6 +644,9 @@ isOneToOne: false
 "create_invite":
 { Args: { "p_guardian_link_id": string }; Returns: Json
                            },
+"end_trip":
+{ Args: { "p_client_action_id": string,"p_device_time": string,"p_force": boolean,"p_lat"?: number,"p_lng"?: number,"p_reason": string,"p_trip_id": string }; Returns: Json
+                           },
 "generate_trips":
 { Args: { "p_service_date": string }; Returns: number
                            },
@@ -660,6 +663,9 @@ isOneToOne: false
 { Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_student_id": string,"p_trip_id": string }; Returns: Json
                            },
 "mark_no_show":
+{ Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_student_id": string,"p_trip_id": string }; Returns: Json
+                           },
+"mark_returned_to_school":
 { Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_student_id": string,"p_trip_id": string }; Returns: Json
                            },
 "redeem_invite":
