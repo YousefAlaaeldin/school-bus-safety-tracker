@@ -708,5 +708,19 @@
       "dropped": "Dropped",
       "returned_to_school": "Returned to school"
     }
+  },
+  "permissions": {
+    "location": {
+      "title": "Share the bus location",
+      "why": "The bus location is shared with parents only during a trip, and tracking stops when the trip ends.",
+      "iosAlways": "On iPhone, choose \"Always\" so tracking continues when the screen is locked.",
+      "allow": "Allow location",
+      "openSettings": "Open settings",
+      "denied": "Location is blocked. Open settings and allow location for this app.",
+      "foregroundOnly": "Tracking stops when the app is closed. Allow location \"all the time\" to keep sharing.",
+      "continue": "Continue",
+      "skip": "Continue without background tracking",
+      "granted": "Location is allowed."
+    }
   }
 }

@@ -1,4 +1,3 @@
-import * as Location from 'expo-location';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -7,6 +6,7 @@ import { getLanguage } from '@/i18n';
 import { rpcError } from '@/lib/supabase';
 import { getActiveTripId } from '@/location/activeTrip';
 import { startBusTracking } from '@/location/backgroundTask';
+import { checkPermissions } from '@/location/ensurePermissions';
 import { useHelperAction } from '@/queue/useHelperAction';
 import { useTrip } from '@/trip/useTrip';
 import { Banner } from '@/ui/Banner';
@@ -26,6 +26,13 @@ export default function TripRouter() {
   const run = useHelperAction();
   const [message, setMessage] = useState<string | null>(null);
   const [starting, setStarting] = useState(false);
+  const [permissionAsked, setPermissionAsked] = useState(false);
+  const [permission, setPermission] = useState<string | null>(null);
+
+  // Re-check when coming back from the permissions screen.
+  useEffect(() => {
+    void checkPermissions().then(setPermission);
+  }, [permissionAsked, starting]);
 
   // Share the bus location while the trip is under way (also when an already started trip is reopened).
   useEffect(() => {
@@ -67,9 +74,11 @@ export default function TripRouter() {
     setStarting(true);
     setMessage(null);
     try {
-      const permission = await Location.requestForegroundPermissionsAsync();
-      if (permission.status !== 'granted') {
-        setMessage(t('helper.trip.locationNeeded'));
+      // Anything less than full permission goes through the explainer first. The helper may still
+      // come back and start with foreground-only access, which shows a warning below.
+      if (!permissionAsked && (await checkPermissions()) !== 'ok') {
+        setPermissionAsked(true);
+        router.push('/(helper)/permissions');
         return;
       }
       await run('start_trip', { p_trip_id: tripId });
@@ -104,6 +113,9 @@ export default function TripRouter() {
               </>
             ) : null}
           </Card>
+          {permission === 'needsBackground' ? (
+            <Banner kind="warning" message={t('permissions.location.foregroundOnly')} />
+          ) : null}
           {message ? <Banner kind="warning" message={message} /> : null}
           <Button title={t('helper.trip.start')} onPress={() => void startTrip()} loading={starting} />
         </View>
