@@ -1,4 +1,4 @@
-import type { EtaResult, EtaStop, LatLng } from './routes';
+import type { EtaResult, EtaStop, LatLng } from './routes.ts';
 
 const ROAD_FACTOR = 1.4;
 const SPEED_KMH = 25;

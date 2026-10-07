@@ -138,7 +138,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T4.02 — `apply_etas` RPC
 - [x] T4.03 — Google Routes API client
 - [x] T4.04 — Straight-line fallback estimator
-- [ ] T4.05 — Edge Function `eta-tick` + cron ⚠ hard
+- [x] T4.05 — Edge Function `eta-tick` + cron ⚠ hard
 - [ ] T4.06 — Watchdogs
 - [ ] T4.07 — Parent map: ETA + approaching state
 - [ ] T4.08 — Dashboard live board
