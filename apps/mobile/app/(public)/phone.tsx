@@ -46,13 +46,14 @@ export default function PhoneScreen() {
         <Text variant="title">{t('auth.phoneTitle')}</Text>
         <Text variant="body" style={{ color: colors.muted }}>{t('auth.phoneHelp')}</Text>
         <PhoneField
+          testID="phone-input"
           onChangeE164={setPhone}
           error={touched && !phone ? t('auth.invalidPhone') : null}
         />
         {error ? (
           <Banner kind="error" message={error} actionLabel={t('common.retry')} onAction={() => void submit()} />
         ) : null}
-        <Button title={t('auth.continue')} onPress={() => void submit()} loading={loading} disabled={!phone} />
+        <Button testID="phone-continue" title={t('auth.continue')} onPress={() => void submit()} loading={loading} disabled={!phone} />
       </View>
     </Screen>
   );

@@ -7,13 +7,14 @@ import { colors, radius, spacing } from './tokens';
 
 type Props = {
   label?: string;
+  testID?: string;
   error?: string | null;
   /** Called on every change with the E.164 number, or null while it is not a valid UAE mobile. */
   onChangeE164: (value: string | null) => void;
 };
 
 /** A fixed +971 prefix (always LTR) and a numeric input for the 9-digit mobile number. */
-export function PhoneField({ label, error, onChangeE164 }: Props) {
+export function PhoneField({ label, error, testID, onChangeE164 }: Props) {
   const [digits, setDigits] = useState('');
 
   const handleChange = (text: string) => {
@@ -51,6 +52,7 @@ export function PhoneField({ label, error, onChangeE164 }: Props) {
           +971
         </Text>
         <TextInput
+          testID={testID}
           accessibilityLabel={label ?? '+971'}
           keyboardType="number-pad"
           inputMode="numeric"

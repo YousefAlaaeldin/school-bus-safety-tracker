@@ -6,12 +6,13 @@ import { colors, spacing } from './tokens';
 type Props = {
   children: ReactNode;
   scroll?: boolean;
+  testID?: string;
   style?: StyleProp<ViewStyle>;
 };
 
-export function Screen({ children, scroll = false, style }: Props) {
+export function Screen({ children, scroll = false, testID, style }: Props) {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: colors.bg }}>
+    <SafeAreaView testID={testID} style={{ flex: 1, backgroundColor: colors.bg }}>
       {scroll ? (
         <ScrollView
           contentContainerStyle={[{ paddingHorizontal: spacing[4], paddingVertical: spacing[4] }, style]}

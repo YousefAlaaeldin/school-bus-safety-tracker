@@ -72,6 +72,7 @@ export default function OtpScreen() {
           {t('auth.otpHelp', { phone: `⁦${phone ?? ''}⁩` })}
         </Text>
         <TextInput
+          testID="otp-input"
           accessibilityLabel={t('auth.otpTitle')}
           value={code}
           onChangeText={onChange}
@@ -98,6 +99,7 @@ export default function OtpScreen() {
         />
         {error ? <Banner kind="error" message={error} /> : null}
         <Button
+          testID="otp-resend"
           title={seconds > 0 ? t('auth.resendIn', { seconds }) : t('auth.resend')}
           variant="secondary"
           onPress={() => void resend()}

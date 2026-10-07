@@ -16,6 +16,7 @@ function LanguageToggle() {
       {(['ar', 'en'] as const).map((code) => (
         <Pressable
           key={code}
+          testID={`welcome-lang-${code}`}
           accessibilityRole="button"
           accessibilityState={{ selected: current === code }}
           onPress={() => void setLanguage(code)}
@@ -39,14 +40,16 @@ function RoleCard({
   title,
   subtitle,
   onPress,
+  testID,
 }: {
+  testID: string;
   icon: string;
   title: string;
   subtitle: string;
   onPress: () => void;
 }) {
   return (
-    <Card onPress={onPress} accessibilityLabel={title}>
+    <Card testID={testID} onPress={onPress} accessibilityLabel={title}>
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing[4] }}>
         <Text style={{ fontSize: 32, lineHeight: 40 }}>{icon}</Text>
         <View style={{ flex: 1 }}>
@@ -77,18 +80,21 @@ export default function Welcome() {
       </View>
       <View style={{ gap: spacing[3] }}>
         <RoleCard
+          testID="welcome-parent"
           icon="👨‍👩‍👧"
           title={t('welcome.parentTitle')}
           subtitle={t('welcome.parentSubtitle')}
           onPress={() => pick('parent')}
         />
         <RoleCard
+          testID="welcome-helper"
           icon="🚌"
           title={t('welcome.helperTitle')}
           subtitle={t('welcome.helperSubtitle')}
           onPress={() => pick('helper')}
         />
         <RoleCard
+          testID="welcome-staff"
           icon="🏫"
           title={t('welcome.staffTitle')}
           subtitle={t('welcome.staffSubtitle')}

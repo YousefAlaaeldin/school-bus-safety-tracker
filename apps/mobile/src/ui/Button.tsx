@@ -11,6 +11,7 @@ type Props = {
   loading?: boolean;
   disabled?: boolean;
   accessibilityLabel?: string;
+  testID?: string;
   style?: StyleProp<ViewStyle>;
 };
 
@@ -33,11 +34,13 @@ export function Button({
   loading = false,
   disabled = false,
   accessibilityLabel,
+  testID,
   style,
 }: Props) {
   const inactive = disabled || loading;
   return (
     <Pressable
+      testID={testID}
       accessibilityRole="button"
       accessibilityLabel={accessibilityLabel ?? title}
       accessibilityState={{ disabled: inactive, busy: loading }}

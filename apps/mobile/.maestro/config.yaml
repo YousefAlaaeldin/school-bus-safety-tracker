@@ -1,0 +1,5 @@
+# Maestro workspace config. Run from apps/mobile:  maestro test .maestro/signin-parent.yaml -e LANG=ar
+flows:
+  - signin-*.yaml
+  - afternoon-trip.yaml
+  - morning-trip.yaml

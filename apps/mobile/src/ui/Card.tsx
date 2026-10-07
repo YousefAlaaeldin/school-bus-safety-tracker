@@ -6,6 +6,7 @@ type Props = {
   children: ReactNode;
   onPress?: () => void;
   accessibilityLabel?: string;
+  testID?: string;
   style?: StyleProp<ViewStyle>;
 };
 
@@ -17,10 +18,11 @@ const base: ViewStyle = {
   padding: spacing[4],
 };
 
-export function Card({ children, onPress, accessibilityLabel, style }: Props) {
-  if (!onPress) return <View style={[base, style]}>{children}</View>;
+export function Card({ children, onPress, accessibilityLabel, testID, style }: Props) {
+  if (!onPress) return <View testID={testID} style={[base, style]}>{children}</View>;
   return (
     <Pressable
+      testID={testID}
       accessibilityRole="button"
       accessibilityLabel={accessibilityLabel}
       onPress={onPress}

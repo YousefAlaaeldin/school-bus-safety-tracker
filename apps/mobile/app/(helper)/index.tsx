@@ -47,7 +47,7 @@ export default function HelperHome() {
   });
 
   return (
-    <Screen scroll>
+    <Screen scroll testID="helper-home">
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: spacing[3] }}>
         <Text variant="title">{t('helper.home.title')}</Text>
         <Pressable

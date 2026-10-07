@@ -26,6 +26,7 @@ export default function ParentHome() {
 
   return (
     <ScrollView
+      testID="parent-home"
       style={{ flex: 1, backgroundColor: colors.bg }}
       contentContainerStyle={{ padding: spacing[4], paddingTop: insets.top + spacing[4], gap: spacing[4] }}
       refreshControl={<RefreshControl refreshing={home.isRefetching} onRefresh={() => void home.refetch()} />}

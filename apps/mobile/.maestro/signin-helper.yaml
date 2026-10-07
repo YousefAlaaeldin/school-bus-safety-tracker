@@ -1,0 +1,26 @@
+# Signs in as the seeded helper (+971500000002, OTP 123456) in the language given by -e LANG=ar|en.
+appId: ae.saferide.app
+env:
+  LANG: en
+---
+- launchApp:
+    clearState: true
+- tapOn:
+    id: welcome-lang-${LANG}
+- takeScreenshot: signin-helper-${LANG}-1-welcome
+- tapOn:
+    id: welcome-helper
+- tapOn:
+    id: phone-input
+- inputText: "500000002"
+- takeScreenshot: signin-helper-${LANG}-2-phone
+- tapOn:
+    id: phone-continue
+- tapOn:
+    id: otp-input
+- inputText: "123456"
+- extendedWaitUntil:
+    visible:
+      id: helper-home
+    timeout: 20000
+- takeScreenshot: signin-helper-${LANG}-3-home

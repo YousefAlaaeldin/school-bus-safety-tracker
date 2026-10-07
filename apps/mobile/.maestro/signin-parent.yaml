@@ -1,0 +1,26 @@
+# Signs in as the seeded parent (+971500000003, OTP 123456) in the language given by -e LANG=ar|en.
+appId: ae.saferide.app
+env:
+  LANG: en
+---
+- launchApp:
+    clearState: true
+- tapOn:
+    id: welcome-lang-${LANG}
+- takeScreenshot: signin-parent-${LANG}-1-welcome
+- tapOn:
+    id: welcome-parent
+- tapOn:
+    id: phone-input
+- inputText: "500000003"
+- takeScreenshot: signin-parent-${LANG}-2-phone
+- tapOn:
+    id: phone-continue
+- tapOn:
+    id: otp-input
+- inputText: "123456"
+- extendedWaitUntil:
+    visible:
+      id: parent-home
+    timeout: 20000
+- takeScreenshot: signin-parent-${LANG}-3-home
