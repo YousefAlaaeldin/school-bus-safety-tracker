@@ -127,6 +127,28 @@
       "parent": "a parent",
       "helper": "a bus helper",
       "admin": "school staff"
+    },
+    "invite": {
+      "title": "Enter your invite code",
+      "help": "Your school gave you an 8-character code to link your child.",
+      "codeLabel": "Invite code",
+      "submit": "Link my child"
+    },
+    "pending": {
+      "title": "Waiting for school approval",
+      "help": "Your school needs to approve your request. This usually takes a short while.",
+      "haveCode": "I have an invite code",
+      "checkAgain": "Check again"
+    },
+    "notRegistered": {
+      "title": "Your number is not registered",
+      "help": "Ask your school to add your phone number, then sign in again.",
+      "yourNumber": "Number used: {{phone}}"
+    },
+    "chooseRole": {
+      "title": "How do you want to use the app?",
+      "parent": "As a parent",
+      "helper": "As a bus helper"
     }
   }
 }
