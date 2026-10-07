@@ -664,6 +664,9 @@ isOneToOne: false
                            },
 "set_trip_helper":
 { Args: { "p_helper_id": string,"p_trip_id": string }; Returns: undefined
+                           },
+"start_trip":
+{ Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_trip_id": string }; Returns: Json
                            }
           }
           Enums: {
