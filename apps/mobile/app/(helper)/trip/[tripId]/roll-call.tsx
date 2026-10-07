@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FlatList, View } from 'react-native';
 import { useHelperAction } from '@/queue/useHelperAction';
+import { ConfirmRollCallSheet } from '@/trip/ConfirmRollCallSheet';
 import { StudentRow, studentName } from '@/trip/StudentRow';
 import { useTrip } from '@/trip/useTrip';
 import { Banner } from '@/ui/Banner';
@@ -32,6 +33,7 @@ export default function RollCallScreen() {
   const run = useHelperAction();
   const [query, setQuery] = useState('');
   const [confirming, setConfirming] = useState(false);
+  const [sheetOpen, setSheetOpen] = useState(false);
 
   // Once roll call is confirmed (or the trip is not in roll call), the router picks the next screen.
   useEffect(() => {
@@ -63,6 +65,7 @@ export default function RollCallScreen() {
     setConfirming(true);
     try {
       await run('confirm_roll_call', { p_trip_id: tripId });
+      setSheetOpen(false);
     } finally {
       setConfirming(false);
     }
@@ -86,8 +89,15 @@ export default function RollCallScreen() {
         )}
       />
       <View style={{ paddingVertical: spacing[3] }}>
-        <Button title={t('helper.rollCall.confirmButton')} onPress={() => void confirm()} loading={confirming} />
+        <Button title={t('helper.rollCall.confirmButton')} onPress={() => setSheetOpen(true)} />
       </View>
+      <ConfirmRollCallSheet
+        visible={sheetOpen}
+        missing={(students ?? []).filter((s) => s.status === 'expected')}
+        loading={confirming}
+        onCancel={() => setSheetOpen(false)}
+        onConfirm={() => void confirm()}
+      />
     </Screen>
   );
 }

@@ -147,7 +147,15 @@
       "search": "Search a student",
       "confirmButton": "Confirm roll call",
       "absent": "Absent",
-      "sync": "Waiting to sync"
+      "sync": "Waiting to sync",
+      "sheet": {
+        "missingTitle": "These students are not on board",
+        "missingWarning": "These will be reported missing to the school.",
+        "allOnBoard": "Everyone is on board",
+        "goBack": "Go back",
+        "confirmReport": "Confirm & report",
+        "confirm": "Confirm"
+      }
     }
   },
   "admin": {
