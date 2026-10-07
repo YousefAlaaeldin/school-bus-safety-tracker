@@ -5,7 +5,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 ## Phase 0 — Setup  ([phase-0-setup.md](phase-0-setup.md))
 - [ ] H0.1 — Move the project to a path without spaces 👤
 - [ ] H0.2 — Install tools on Windows 👤
-- [ ] H0.3 — Create accounts 👤
+- [x] H0.3 — Create accounts 👤
 - [x] T0.01 — Git repo and root housekeeping files
 - [x] T0.02 — pnpm workspace and root scripts
 - [x] T0.03 — Shared TypeScript, ESLint and Prettier config

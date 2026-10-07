@@ -15,12 +15,6 @@ Format:
 - Phone sign-in locally needs an SMS provider enabled, even for test-OTP numbers (`phone_provider_disabled` otherwise). I enabled `[auth.sms.twilio]` in `supabase/config.toml` with **dummy** credentials; the test_otp numbers never send an SMS. The real Twilio setup is H6.2.
 - I added `supabase` as a root devDependency (the CLI isn't on PATH on this machine), so `pnpm db:*` scripts work unchanged.
 
-## T1.62 — Stops page with map pin picker
-- Tried: nothing yet. T1.62 depends on H0.3 (Google Maps JavaScript API key), which is not ticked.
-- Error: dependency missing (human task). This also holds back T1.63, T1.64, T1.65 (they depend on T1.62 / T1.63).
-- Question: Create the Google Cloud project and a Maps JavaScript API key (restricted to localhost), put it in `apps/web/.env.local` as NEXT_PUBLIC_GOOGLE_MAPS_API_KEY, tick H0.3, then tell me to continue. Or say "build it without a key" and I'll build the pin picker so it shows a plain lat/lng form fallback when no key is set.
-- Answer (human):
-
 ## T3.08 — Push registration + Android channel
 - Tried: nothing yet. T3.08 depends on H0.4 (first development builds on real devices), which is not ticked.
 - Error: dependency missing (human task). This holds back T3.09 to T3.13 and T3.15 to T3.19 (parent app, location tracking, admin alerts mode) and the mobile tasks after them (T4.07, T5.03, T5.05 to T5.08). Backend tasks that do not need it are being done meanwhile.
