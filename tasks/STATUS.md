@@ -115,7 +115,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T3.01 — Notification renderer + time formatting
 - [x] T3.02 — i18n sync script for Edge Functions
 - [ ] T3.03 — RPCs: claim/complete notifications, receipts
-- [ ] T3.04 — Expo push client module
+- [x] T3.04 — Expo push client module
 - [ ] T3.05 — Edge Function `notify-dispatch` ⚠ hard
 - [ ] T3.06 — Cron schedules + local Vault secrets
 - [ ] T3.07 — Edge Function `push-receipts` + cron
