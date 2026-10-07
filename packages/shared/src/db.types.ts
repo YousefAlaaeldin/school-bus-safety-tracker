@@ -635,6 +635,9 @@ isOneToOne: false
 "approve_guardian_link":
 { Args: { "p_link_id": string }; Returns: undefined
                            },
+"arrive_at_school":
+{ Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_trip_id": string }; Returns: Json
+                           },
 "confirm_roll_call":
 { Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_trip_id": string }; Returns: Json
                            },
@@ -654,6 +657,9 @@ isOneToOne: false
 { Args: { "p_display_name": string,"p_email": string,"p_phone": string,"p_role": Database["public"]['Enums']["membership_role"],"p_school_id": string }; Returns: Json
                            },
 "mark_dropped":
+{ Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_student_id": string,"p_trip_id": string }; Returns: Json
+                           },
+"mark_no_show":
 { Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_student_id": string,"p_trip_id": string }; Returns: Json
                            },
 "redeem_invite":
@@ -678,6 +684,9 @@ isOneToOne: false
 { Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_trip_id": string }; Returns: Json
                            },
 "undo_dropped":
+{ Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_student_id": string,"p_trip_id": string }; Returns: Json
+                           },
+"undo_no_show":
 { Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_student_id": string,"p_trip_id": string }; Returns: Json
                            }
           }
