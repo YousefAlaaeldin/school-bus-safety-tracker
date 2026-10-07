@@ -176,7 +176,7 @@ export default function DropScreen() {
                       student={s}
                       indicator={<View />}
                       onLongPress={() => returnToSchool(s.student_id, studentName(s))}
-                      trailing={<Button title={t('helper.drop.dropped')} onPress={() => void dropAt([{ student_id: s.student_id, name: studentName(s) }], group.stop_id)} />}
+                      trailing={<Button testID={`drop-${s.student_id}`} title={t('helper.drop.dropped')} onPress={() => void dropAt([{ student_id: s.student_id, name: studentName(s) }], group.stop_id)} />}
                     />
                   ),
                 )}
@@ -186,7 +186,7 @@ export default function DropScreen() {
       </ScrollView>
       <View style={{ paddingVertical: spacing[2], gap: spacing[2] }}>
         <Button title={t('helper.drop.map')} variant="secondary" onPress={() => router.push(`/(helper)/trip/${tripId}/map`)} />
-        <Button title={t('helper.drop.endTrip')} variant="secondary" onPress={() => setEndOpen(true)} />
+        <Button testID="end-trip" title={t('helper.drop.endTrip')} variant="secondary" onPress={() => setEndOpen(true)} />
       </View>
       <EndTripSheet
         visible={endOpen}

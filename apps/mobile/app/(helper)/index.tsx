@@ -77,6 +77,7 @@ export default function HelperHome() {
           return (
             <Card
               key={trip.id}
+              testID={`trip-card-${trip.direction === 'to_school' ? 'morning' : 'afternoon'}`}
               onPress={() => router.push(`/(helper)/trip/${trip.id}`)}
               accessibilityLabel={locale === 'ar' ? route?.name_ar : route?.name_en}
             >

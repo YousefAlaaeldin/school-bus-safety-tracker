@@ -63,6 +63,7 @@ export function EndTripSheet({ visible, onBoard, loading, onClose, onEnd }: Prop
           <View style={{ gap: spacing[3] }}>
             {hasOnBoard ? (
               <Button
+                testID="end-trip-anyway"
                 title={t('helper.endTrip.endAnyway')}
                 variant="danger"
                 disabled={reason.trim().length === 0}
@@ -70,7 +71,7 @@ export function EndTripSheet({ visible, onBoard, loading, onClose, onEnd }: Prop
                 onPress={() => onEnd(true, reason.trim())}
               />
             ) : (
-              <Button title={t('helper.endTrip.confirmButton')} loading={loading} onPress={() => onEnd(false, null)} />
+              <Button testID="end-trip-confirm" title={t('helper.endTrip.confirmButton')} loading={loading} onPress={() => onEnd(false, null)} />
             )}
             <Button title={t('helper.endTrip.cancel')} variant="secondary" onPress={onClose} />
           </View>

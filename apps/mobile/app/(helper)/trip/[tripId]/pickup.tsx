@@ -121,8 +121,9 @@ export default function PickupScreen() {
                     indicator={<View />}
                     trailing={
                       <View style={{ gap: spacing[2] }}>
-                        <Button title={t('helper.pickup.pickedUp')} onPress={() => pickUp(s.student_id, studentName(s))} />
+                        <Button testID={`pickup-${s.student_id}`} title={t('helper.pickup.pickedUp')} onPress={() => pickUp(s.student_id, studentName(s))} />
                         <Button
+                          testID={`noshow-${s.student_id}`}
                           title={t('helper.pickup.noShow')}
                           variant="secondary"
                           onPress={() => noShow(s.student_id, studentName(s))}
@@ -137,11 +138,11 @@ export default function PickupScreen() {
       </ScrollView>
       {arrived || trip.arrived_school_at ? (
         <View style={{ paddingVertical: spacing[2] }}>
-          <Button title={t('helper.drop.endTrip')} onPress={() => setEndOpen(true)} />
+          <Button testID="end-trip" title={t('helper.drop.endTrip')} onPress={() => setEndOpen(true)} />
         </View>
       ) : nobodyLeft || skipped ? (
         <View style={{ paddingVertical: spacing[2] }}>
-          <Button title={t('helper.pickup.arrived')} onPress={arrive} />
+          <Button testID="arrived-school" title={t('helper.pickup.arrived')} onPress={arrive} />
         </View>
       ) : (
         <View style={{ paddingVertical: spacing[2] }}>

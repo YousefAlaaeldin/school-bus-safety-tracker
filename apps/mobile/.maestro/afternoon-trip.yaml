@@ -1,0 +1,58 @@
+# Afternoon trip (A_PM): start, board 3 of 5, confirm roll call (2 missing), drop each, end.
+# Precondition: today's trips exist (see README). Run: maestro test .maestro/afternoon-trip.yaml -e LANG=ar
+appId: ae.saferide.app
+env:
+  LANG: en
+  TRIP: afternoon
+---
+- runFlow:
+    file: _signin-helper-steps.yaml
+    env:
+      LANG: ${LANG}
+      TRIP: afternoon
+- takeScreenshot: afternoon-${LANG}-02-trip-summary
+- tapOn:
+    id: start-trip
+# First start asks for location permission; allow it when the system dialog appears.
+- tapOn:
+    text: "(?i).*(while using|أثناء استخدام).*"
+    optional: true
+- extendedWaitUntil:
+    visible:
+      id: rollcall-confirm
+    timeout: 20000
+- takeScreenshot: afternoon-${LANG}-03-roll-call
+- tapOn:
+    id: student-row-f0000000-0000-0000-0000-000000000001
+- tapOn:
+    id: student-row-f0000000-0000-0000-0000-000000000002
+- tapOn:
+    id: student-row-f0000000-0000-0000-0000-000000000003
+- takeScreenshot: afternoon-${LANG}-04-boarded-3
+- tapOn:
+    id: rollcall-confirm
+- takeScreenshot: afternoon-${LANG}-05-confirm-sheet-2-missing
+- tapOn:
+    id: rollcall-sheet-confirm
+- extendedWaitUntil:
+    visible:
+      id: drop-f0000000-0000-0000-0000-000000000001
+    timeout: 20000
+- takeScreenshot: afternoon-${LANG}-06-drop-list
+- tapOn:
+    id: drop-f0000000-0000-0000-0000-000000000001
+- tapOn:
+    id: drop-f0000000-0000-0000-0000-000000000002
+- tapOn:
+    id: drop-f0000000-0000-0000-0000-000000000003
+- takeScreenshot: afternoon-${LANG}-07-all-dropped
+- tapOn:
+    id: end-trip
+- takeScreenshot: afternoon-${LANG}-08-end-sheet
+- tapOn:
+    id: end-trip-confirm
+- extendedWaitUntil:
+    visible:
+      text: ".+"
+    timeout: 10000
+- takeScreenshot: afternoon-${LANG}-09-completed

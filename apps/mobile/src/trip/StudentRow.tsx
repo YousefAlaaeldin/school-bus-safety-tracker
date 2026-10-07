@@ -109,6 +109,7 @@ export function StudentRow({ student, onPress, onLongPress, trailing, struck, in
       }}
     >
       <Pressable
+        testID={`student-row-${student.student_id}`}
         accessibilityRole={onPress ? 'button' : undefined}
         accessibilityLabel={studentName(student)}
         accessibilityState={{ checked: boarded }}

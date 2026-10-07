@@ -1,0 +1,25 @@
+# Shared steps: sign in as the seeded helper (+971500000002, OTP 123456) and open a trip card.
+# Expects env LANG and TRIP (morning|afternoon).
+appId: ae.saferide.app
+---
+- launchApp:
+    clearState: true
+- tapOn:
+    id: welcome-lang-${LANG}
+- tapOn:
+    id: welcome-helper
+- tapOn:
+    id: phone-input
+- inputText: "500000002"
+- tapOn:
+    id: phone-continue
+- tapOn:
+    id: otp-input
+- inputText: "123456"
+- extendedWaitUntil:
+    visible:
+      id: helper-home
+    timeout: 20000
+- takeScreenshot: ${TRIP}-${LANG}-01-home
+- tapOn:
+    id: trip-card-${TRIP}

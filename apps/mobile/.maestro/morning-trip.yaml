@@ -1,0 +1,53 @@
+# Morning trip (A_AM): start, pick up 3, mark 2 no-show, arrive at school, end.
+# Precondition: today's trips exist (see README). Run: maestro test .maestro/morning-trip.yaml -e LANG=ar
+appId: ae.saferide.app
+env:
+  LANG: en
+  TRIP: morning
+---
+- runFlow:
+    file: _signin-helper-steps.yaml
+    env:
+      LANG: ${LANG}
+      TRIP: morning
+- takeScreenshot: morning-${LANG}-02-trip-summary
+- tapOn:
+    id: start-trip
+- tapOn:
+    text: "(?i).*(while using|أثناء استخدام).*"
+    optional: true
+- extendedWaitUntil:
+    visible:
+      id: pickup-f0000000-0000-0000-0000-000000000001
+    timeout: 20000
+- takeScreenshot: morning-${LANG}-03-pickup-list
+- tapOn:
+    id: pickup-f0000000-0000-0000-0000-000000000001
+- tapOn:
+    id: pickup-f0000000-0000-0000-0000-000000000002
+- tapOn:
+    id: pickup-f0000000-0000-0000-0000-000000000003
+- takeScreenshot: morning-${LANG}-04-picked-up-3
+- tapOn:
+    id: noshow-f0000000-0000-0000-0000-000000000004
+- tapOn:
+    text: "(?i).*(confirm|تأكيد).*"
+    optional: true
+- tapOn:
+    id: noshow-f0000000-0000-0000-0000-000000000005
+- tapOn:
+    text: "(?i).*(confirm|تأكيد).*"
+    optional: true
+- takeScreenshot: morning-${LANG}-05-no-shows
+- tapOn:
+    id: arrived-school
+- takeScreenshot: morning-${LANG}-06-arrived
+- tapOn:
+    id: end-trip
+- tapOn:
+    id: end-trip-confirm
+- extendedWaitUntil:
+    visible:
+      text: ".+"
+    timeout: 10000
+- takeScreenshot: morning-${LANG}-07-completed

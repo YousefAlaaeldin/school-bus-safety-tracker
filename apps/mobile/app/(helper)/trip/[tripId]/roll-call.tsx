@@ -89,7 +89,7 @@ export default function RollCallScreen() {
         )}
       />
       <View style={{ paddingVertical: spacing[3] }}>
-        <Button title={t('helper.rollCall.confirmButton')} onPress={() => setSheetOpen(true)} />
+        <Button testID="rollcall-confirm" title={t('helper.rollCall.confirmButton')} onPress={() => setSheetOpen(true)} />
       </View>
       <ConfirmRollCallSheet
         visible={sheetOpen}

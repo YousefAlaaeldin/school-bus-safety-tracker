@@ -52,6 +52,7 @@ export function ConfirmRollCallSheet({ visible, missing, loading, onCancel, onCo
           ) : null}
           <View style={{ gap: spacing[3] }}>
             <Button
+              testID="rollcall-sheet-confirm"
               title={nobodyMissing ? t('helper.rollCall.sheet.confirm') : t('helper.rollCall.sheet.confirmReport')}
               variant={nobodyMissing ? 'primary' : 'danger'}
               onPress={onConfirm}

@@ -117,7 +117,7 @@ export default function TripRouter() {
             <Banner kind="warning" message={t('permissions.location.foregroundOnly')} />
           ) : null}
           {message ? <Banner kind="warning" message={message} /> : null}
-          <Button title={t('helper.trip.start')} onPress={() => void startTrip()} loading={starting} />
+          <Button testID="start-trip" title={t('helper.trip.start')} onPress={() => void startTrip()} loading={starting} />
         </View>
       </Screen>
     );
