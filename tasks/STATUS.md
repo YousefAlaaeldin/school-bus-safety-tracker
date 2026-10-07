@@ -68,7 +68,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T1.52 — Privacy, terms, support pages
 - [x] T1.53 — Invite link page
 - [x] T1.54 — Dashboard login and access guard
-- [ ] T1.55 — Dashboard shell layout
+- [x] T1.55 — Dashboard shell layout
 - [ ] T1.56 — Dashboard UI kit
 - [ ] T1.57 — Students list
 - [ ] T1.58 — Student create/edit + photo upload

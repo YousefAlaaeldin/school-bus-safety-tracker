@@ -314,6 +314,24 @@
       "noAccessTitle": "No access",
       "noAccessBody": "This account is not an administrator of any school. Ask your school to add you.",
       "signOut": "Sign out"
+    },
+    "nav": {
+      "live": "Live board",
+      "alerts": "Alerts",
+      "trips": "Today's trips",
+      "students": "Students",
+      "import": "Import",
+      "buses": "Buses",
+      "stops": "Stops",
+      "routes": "Routes",
+      "staff": "Staff",
+      "calendar": "Calendar",
+      "settings": "Settings",
+      "menu": "Menu"
+    },
+    "live": {
+      "title": "Live board",
+      "placeholder": "Live bus positions will appear here."
     }
   }
 }
