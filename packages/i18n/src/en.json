@@ -150,5 +150,16 @@
       "parent": "As a parent",
       "helper": "As a bus helper"
     }
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "switchRole": "Switch role",
+    "signedInAs": "Signed in as",
+    "roles": {
+      "parent": "Parent",
+      "helper": "Bus helper",
+      "admin": "School staff"
+    }
   }
 }
