@@ -23,7 +23,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [ ] H0.4 — First development builds on real devices 👤
 
 ## Phase 1a — Database foundation  ([phase-1-database.md](phase-1-database.md))
-- [ ] T1.01 — Extensions and private schema
+- [x] T1.01 — Extensions and private schema
 - [ ] T1.02 — Enums
 - [ ] T1.03 — Schools and calendar
 - [ ] T1.04 — Profiles, memberships, staff invites
