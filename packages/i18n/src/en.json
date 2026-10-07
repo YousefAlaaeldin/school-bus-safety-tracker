@@ -149,8 +149,9 @@
       "ended": "Tracking has ended for this trip.",
       "stale": "The bus location has not updated for over a minute. It may have a weak signal.",
       "waiting": "Waiting for the bus location…",
-      "eta": "Arriving at your stop ~{{time}}",
-      "updated": "Updated {{seconds}}s ago"
+      "eta": "Arriving about {{time}}",
+      "updated": "Updated {{seconds}}s ago",
+      "estimate": "(estimate)"
     },
     "absence": {
       "title": "Report absence",

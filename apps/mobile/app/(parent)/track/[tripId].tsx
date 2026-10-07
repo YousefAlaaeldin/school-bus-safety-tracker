@@ -15,6 +15,7 @@ import { Text } from '@/ui/Text';
 import { colors, spacing } from '@/ui/tokens';
 
 const STALE_AFTER_S = 60;
+const APPROACHING_MS = 10 * 60 * 1000;
 
 export default function TrackScreen() {
   const { t } = useTranslation();
@@ -73,6 +74,8 @@ export default function TrackScreen() {
   const name = child ? (locale === 'ar' ? child.name_ar : child.name_en) : '';
   const busLabel = view?.bus ? (locale === 'ar' ? view.bus.label_ar : view.bus.label_en) : '';
   const eta = child?.eta_at ? `⁦${formatTime(child.eta_at, locale)}⁩` : null;
+  const msToEta = child?.eta_at ? new Date(child.eta_at).getTime() - now : null;
+  const approaching = msToEta !== null && msToEta < APPROACHING_MS;
 
   return (
     <View style={{ flex: 1 }}>
@@ -109,12 +112,17 @@ export default function TrackScreen() {
 
       <View style={{ position: 'absolute', start: spacing[4], end: spacing[4], bottom: spacing[5], gap: spacing[3] }}>
         {stale ? <Banner kind="warning" message={t('parent.track.stale')} /> : null}
-        <Card style={{ gap: spacing[2] }}>
+        <Card style={{ gap: spacing[2], ...(approaching ? { borderColor: colors.primary, borderWidth: 2, backgroundColor: '#E8F5EE' } : null) }}>
           <Text variant="title">{name}</Text>
           <Text variant="body" style={{ color: colors.muted }}>
             {position ? busLabel : t('parent.track.waiting')}
           </Text>
-          {eta ? <Text variant="body">{t('parent.track.eta', { time: eta })}</Text> : null}
+          {eta ? (
+            <Text variant="body" weight={approaching ? 'bold' : undefined}>
+              {t('parent.track.eta', { time: eta })}
+              {child?.eta_source === 'fallback' ? ` ${t('parent.track.estimate')}` : ''}
+            </Text>
+          ) : null}
           {seconds !== null ? (
             <Text variant="caption" style={{ color: colors.muted }}>{t('parent.track.updated', { seconds })}</Text>
           ) : null}

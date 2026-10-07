@@ -10,6 +10,7 @@ type MyChild = {
   stop_id: string;
   status: StudentTripStatus;
   eta_at: string | null;
+  eta_source: 'routes_api' | 'fallback' | null;
   name_ar: string;
   name_en: string;
   stop: { label_ar: string; label_en: string; lat: number; lng: number } | null;
@@ -33,7 +34,7 @@ async function loadTripView(tripId: string): Promise<TripView> {
 
   const { data: rows, error: rowsError } = await supabase
     .from('trip_students')
-    .select('student_id, stop_id, status, eta_at, students(name_ar, name_en)')
+    .select('student_id, stop_id, status, eta_at, eta_source, students(name_ar, name_en)')
     .eq('trip_id', tripId);
   if (rowsError) throw rowsError;
 
@@ -55,6 +56,7 @@ async function loadTripView(tripId: string): Promise<TripView> {
         stop_id: r.stop_id,
         status: r.status as StudentTripStatus,
         eta_at: r.eta_at,
+        eta_source: r.eta_source,
         name_ar: r.students?.name_ar ?? '',
         name_en: r.students?.name_en ?? '',
         stop: s && s.lat != null && s.lng != null ? { label_ar: s.label_ar ?? '', label_en: s.label_en ?? '', lat: s.lat, lng: s.lng } : null,
