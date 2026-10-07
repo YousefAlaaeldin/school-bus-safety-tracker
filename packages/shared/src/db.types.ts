@@ -635,6 +635,9 @@ isOneToOne: false
 "approve_guardian_link":
 { Args: { "p_link_id": string }; Returns: undefined
                            },
+"confirm_roll_call":
+{ Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_trip_id": string }; Returns: Json
+                           },
 "create_invite":
 { Args: { "p_guardian_link_id": string }; Returns: Json
                            },

@@ -87,7 +87,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T2.01 — Action helpers + `start_trip`
 - [x] T2.02 — Notification and alert helpers
 - [x] T2.03 — `set_boarded`
-- [ ] T2.04 — `confirm_roll_call`
+- [x] T2.04 — `confirm_roll_call`
 - [ ] T2.05 — `mark_dropped`, `undo_dropped`
 - [ ] T2.06 — `mark_no_show`, `undo_no_show`, `arrive_at_school`
 - [ ] T2.07 — `mark_returned_to_school`, `end_trip`
