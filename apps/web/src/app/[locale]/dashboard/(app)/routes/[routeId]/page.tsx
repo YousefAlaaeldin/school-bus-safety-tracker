@@ -1,6 +1,7 @@
 import { hasLocale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import { RouteAssignments, type Assignment } from '@/components/dashboard/RouteAssignments';
 import { RouteScheduleEditor } from '@/components/dashboard/RouteScheduleEditor';
 import { RouteStopsEditor } from '@/components/dashboard/RouteStopsEditor';
 import { Link } from '@/i18n/navigation';
@@ -29,10 +30,16 @@ export default async function RouteDetailPage({
     .maybeSingle();
   if (!route) notFound();
 
-  const [{ data: routeStops }, { data: allStops }, { data: schedules }] = await Promise.all([
+  const [{ data: routeStops }, { data: allStops }, { data: schedules }, { data: assignRows }, { data: students }] = await Promise.all([
     supabase.from('route_stops').select('stop_id, sequence').eq('route_id', routeId).order('sequence'),
     supabase.from('stops').select('id, label_ar, label_en, is_school').eq('school_id', schoolId).order('label_en'),
     supabase.from('route_schedules').select('weekday, departure_time').eq('route_id', routeId),
+    supabase
+      .from('student_assignments')
+      .select('id, student_id, stop_id, weekdays, valid_from, student:students(name_ar, name_en)')
+      .eq('route_id', routeId)
+      .order('created_at'),
+    supabase.from('students').select('id, name_ar, name_en').eq('school_id', schoolId).eq('active', true).order('name_en'),
   ]);
 
   const toStop = (s: { id: string; label_ar: string; label_en: string; is_school: boolean }) => ({
@@ -47,6 +54,21 @@ export default async function RouteDetailPage({
   });
   const initialTimes: Record<number, string> = {};
   for (const s of schedules ?? []) initialTimes[s.weekday] = s.departure_time.slice(0, 5);
+
+  const stopLabel = new Map((allStops ?? []).map((st) => [st.id, ar ? st.label_ar : st.label_en]));
+  const assignments: Assignment[] = (assignRows ?? []).map((a) => ({
+    id: a.id,
+    studentId: a.student_id,
+    studentName: (ar ? a.student?.name_ar : a.student?.name_en) ?? '',
+    stopId: a.stop_id,
+    stopLabel: stopLabel.get(a.stop_id) ?? '',
+    weekdays: a.weekdays,
+    validFrom: a.valid_from,
+  }));
+  const assignedIds = new Set(assignments.map((a) => a.studentId));
+  const pickable = (students ?? [])
+    .filter((st) => !assignedIds.has(st.id))
+    .map((st) => ({ id: st.id, label: ar ? st.name_ar : st.name_en }));
 
   return (
     <div className="flex flex-col gap-8">
@@ -64,6 +86,15 @@ export default async function RouteDetailPage({
         available={(allStops ?? []).map(toStop)}
       />
       <RouteScheduleEditor routeId={routeId} initial={initialTimes} />
+      <RouteAssignments
+        routeId={routeId}
+        assignments={assignments}
+        students={[
+          ...pickable,
+          ...assignments.map((a) => ({ id: a.studentId, label: a.studentName })),
+        ]}
+        routeStops={initialStops.map((st) => ({ id: st.id, label: st.label }))}
+      />
     </div>
   );
 }
