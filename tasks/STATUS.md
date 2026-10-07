@@ -26,7 +26,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T1.01 — Extensions and private schema
 - [x] T1.02 — Enums
 - [x] T1.03 — Schools and calendar
-- [ ] T1.04 — Profiles, memberships, staff invites
+- [x] T1.04 — Profiles, memberships, staff invites
 - [ ] T1.05 — Students, guardian links, invite codes
 - [ ] T1.06 — Buses, stops, routes, schedules, assignments
 - [ ] T1.07 — Trips, trip students, trip events, client actions
