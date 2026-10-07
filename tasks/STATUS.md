@@ -7,7 +7,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [ ] H0.2 — Install tools on Windows 👤
 - [ ] H0.3 — Create accounts 👤
 - [x] T0.01 — Git repo and root housekeeping files
-- [ ] T0.02 — pnpm workspace and root scripts
+- [x] T0.02 — pnpm workspace and root scripts
 - [ ] T0.03 — Shared TypeScript, ESLint and Prettier config
 - [ ] T0.04 — `packages/shared` skeleton with enums
 - [ ] T0.05 — `packages/i18n` skeleton with parity test
