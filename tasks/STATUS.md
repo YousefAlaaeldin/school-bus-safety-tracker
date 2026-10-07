@@ -142,7 +142,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T4.06 — Watchdogs
 - [ ] T4.07 — Parent map: ETA + approaching state
 - [ ] T4.08 — Dashboard live board
-- [ ] T4.09 — GPS replay tool
+- [x] T4.09 — GPS replay tool
 - [ ] T4.10 — End-to-end scenario test (local)
 - [ ] H4.1 — Ride-along test 👤
 
