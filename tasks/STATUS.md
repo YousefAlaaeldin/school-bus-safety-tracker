@@ -58,7 +58,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T1.35 — Welcome (landing) screen
 - [x] T1.36 — Phone entry screen
 - [x] T1.37 — OTP screen
-- [ ] T1.38 — AuthGate: routing after sign-in ⚠ hard
+- [x] T1.38 — AuthGate: routing after sign-in ⚠ hard
 - [ ] T1.39 — Onboarding screens
 - [ ] T1.40 — Settings screen (shared)
 - [ ] T1.41 — Invite deep link route

@@ -105,5 +105,28 @@
     "resend": "Resend code",
     "resendIn": "Resend in {{seconds}}s",
     "wrongCode": "That code is not correct. Try again."
+  },
+  "parent": {
+    "home": {
+      "title": "My children"
+    }
+  },
+  "helper": {
+    "home": {
+      "title": "Today's trips"
+    }
+  },
+  "admin": {
+    "home": {
+      "title": "School alerts"
+    }
+  },
+  "onboarding": {
+    "roleMismatch": "You are signed in as {{role}}, so we opened that for you.",
+    "roles": {
+      "parent": "a parent",
+      "helper": "a bus helper",
+      "admin": "school staff"
+    }
   }
 }

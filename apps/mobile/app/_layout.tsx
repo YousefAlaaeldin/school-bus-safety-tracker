@@ -2,6 +2,7 @@ import { useFonts } from 'expo-font';
 import { Slot } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { initI18n } from '@/i18n';
+import { AuthGate } from '@/auth/AuthGate';
 import { AppProviders } from '@/providers/AppProviders';
 import { fontAssets } from '@/ui/fonts';
 
@@ -24,7 +25,9 @@ export default function RootLayout() {
 
   return (
     <AppProviders>
-      <Slot />
+      <AuthGate>
+        <Slot />
+      </AuthGate>
     </AppProviders>
   );
 }
