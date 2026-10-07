@@ -101,7 +101,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T2.15 — Trip router screen + Start trip
 - [x] T2.16 — Roll call screen (afternoon)
 - [x] T2.17 — Roll call confirmation sheet
-- [ ] T2.18 — Drop list screen (afternoon)
+- [x] T2.18 — Drop list screen (afternoon)
 - [ ] T2.19 — Drop safeguards: distance check, undo, drop all
 - [ ] T2.20 — Pickup screen (morning)
 - [ ] T2.21 — Arrive at school, Return to school, End trip

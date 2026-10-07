@@ -156,6 +156,25 @@
         "confirmReport": "تأكيد وإبلاغ",
         "confirm": "تأكيد"
       }
+    },
+    "drop": {
+      "title": "الإنزال",
+      "onBoard": "في الحافلة: {{count}}",
+      "nextStop": "المحطة التالية",
+      "left": "المتبقي: {{count}}",
+      "dropped": "إنزال",
+      "droppedAt": "تم الإنزال الساعة {{time}}",
+      "missingSection": "غير موجودين",
+      "missingBadge": "غير موجود",
+      "dropAll": "إنزال الجميع في هذه المحطة",
+      "farWarning": "أنت على بعد {{meters}} م من هذه المحطة. هل تريد الإنزال؟",
+      "dropAnyway": "إنزال على أي حال",
+      "undo": "تراجع",
+      "droppedToast": "تم إنزال {{name}}",
+      "returnToSchool": "إعادة إلى المدرسة",
+      "returnConfirm": "هل تريد إعادة {{name}} إلى المدرسة؟",
+      "map": "الخريطة",
+      "endTrip": "إنهاء الرحلة"
     }
   },
   "admin": {

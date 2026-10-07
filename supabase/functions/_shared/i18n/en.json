@@ -156,6 +156,25 @@
         "confirmReport": "Confirm & report",
         "confirm": "Confirm"
       }
+    },
+    "drop": {
+      "title": "Drop-off",
+      "onBoard": "On board: {{count}}",
+      "nextStop": "Next stop",
+      "left": "{{count}} left",
+      "dropped": "Dropped",
+      "droppedAt": "Dropped at {{time}}",
+      "missingSection": "Missing",
+      "missingBadge": "Missing",
+      "dropAll": "Drop all at this stop",
+      "farWarning": "You are {{meters}} m from this stop. Drop anyway?",
+      "dropAnyway": "Drop anyway",
+      "undo": "Undo",
+      "droppedToast": "{{name}} dropped",
+      "returnToSchool": "Return to school",
+      "returnConfirm": "Return {{name}} to school?",
+      "map": "Map",
+      "endTrip": "End trip"
     }
   },
   "admin": {
