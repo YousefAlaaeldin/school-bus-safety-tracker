@@ -81,7 +81,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [ ] T1.65 — Assignments on route detail
 - [x] T1.66 — Staff page
 - [x] T1.67 — Calendar page
-- [ ] T1.68 — School settings page
+- [x] T1.68 — School settings page
 
 ## Phase 2 — Trip flow: roll call, pickup, drop-off (both directions)  ([phase-2-trips.md](phase-2-trips.md))
 - [ ] T2.01 — Action helpers + `start_trip`

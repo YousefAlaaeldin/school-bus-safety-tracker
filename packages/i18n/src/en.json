@@ -493,6 +493,32 @@
       "dateRequired": "Choose a date.",
       "duplicate": "This date already has an entry.",
       "deleteConfirm": "Delete this day?"
+    },
+    "settings": {
+      "title": "School settings",
+      "nameAr": "School name (Arabic)",
+      "nameEn": "School name (English)",
+      "emirate": "Emirate",
+      "emirates": {
+        "abu_dhabi": "Abu Dhabi",
+        "dubai": "Dubai",
+        "sharjah": "Sharjah",
+        "ajman": "Ajman",
+        "umm_al_quwain": "Umm Al Quwain",
+        "ras_al_khaimah": "Ras Al Khaimah",
+        "fujairah": "Fujairah"
+      },
+      "weekend": "Weekend days",
+      "notifyParentOnMissing": "Tell the parent when their child is missing at roll call",
+      "etaAlertMinutes": "Send the \"bus is coming\" alert this many minutes before (1–60)",
+      "absenceCutoffMinutes": "Parents can report absence until this many minutes before departure (0–720)",
+      "locationRetentionDays": "Keep location history for this many days (1–365)",
+      "dropDistanceWarningM": "Warn if a drop is ticked farther than this many meters from the stop",
+      "save": "Save",
+      "saved": "Settings saved.",
+      "invalid": "Please check the highlighted fields.",
+      "required": "Required.",
+      "range": "Enter a whole number in the allowed range."
     }
   }
 }
