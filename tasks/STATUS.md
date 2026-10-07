@@ -54,7 +54,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [ ] T1.31 — Providers in the root layout
 - [ ] T1.32 — UI kit part 1: tokens, Screen, Button, Card
 - [ ] T1.33 — UI kit part 2: TextField, PhoneField, Banner, EmptyState, Spinner
-- [ ] T1.34 — Role resolution logic (pure + tests)
+- [x] T1.34 — Role resolution logic (pure + tests)
 - [ ] T1.35 — Welcome (landing) screen
 - [ ] T1.36 — Phone entry screen
 - [ ] T1.37 — OTP screen
