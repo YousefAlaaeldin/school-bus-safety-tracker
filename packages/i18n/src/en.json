@@ -172,5 +172,60 @@
       "helper": "Bus helper",
       "admin": "School staff"
     }
+  },
+  "landing": {
+    "headline": "Every child. Every stop. Every day.",
+    "subline": "SafeRide helps schools and parents know where the school bus is and that every child got on and off safely.",
+    "language": "Language",
+    "parents": {
+      "title": "For parents",
+      "b1": "Get a message when your child gets on and off the bus",
+      "b2": "Follow the bus live on a map while your child is on board",
+      "b3": "Know when the bus is about 10 minutes away"
+    },
+    "helpers": {
+      "title": "For bus helpers",
+      "b1": "Do roll call and tick children on and off in a few taps",
+      "b2": "Works with a weak connection and syncs when you are back online",
+      "b3": "Clear lists by stop, with photos",
+      "note": "Your school registers your phone number first."
+    },
+    "schools": {
+      "title": "For schools",
+      "b1": "Manage students, buses, stops and routes in one place",
+      "b2": "Watch every bus live and get alerts when something looks wrong",
+      "b3": "A full record of every pickup and drop-off",
+      "signIn": "Sign in to dashboard",
+      "demo": "Request a demo"
+    },
+    "demoEmail": "hello@saferide.example",
+    "store": {
+      "apple": "Download on the App Store",
+      "google": "Get it on Google Play"
+    },
+    "how": {
+      "title": "How it works",
+      "s1": {
+        "title": "The school adds students",
+        "body": "Students, stops and routes are set up on the dashboard."
+      },
+      "s2": {
+        "title": "Parents link their child",
+        "body": "Parents sign in with their phone number or an invite code."
+      },
+      "s3": {
+        "title": "The helper does roll call",
+        "body": "Children are ticked on and off the bus at every stop."
+      },
+      "s4": {
+        "title": "Everyone stays informed",
+        "body": "Parents get updates and schools get alerts in real time."
+      }
+    },
+    "footer": {
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
   }
 }
