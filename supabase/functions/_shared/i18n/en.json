@@ -346,7 +346,21 @@
       "active": "Active",
       "inactive": "Inactive",
       "edit": "Edit",
-      "empty": "No students found."
+      "empty": "No students found.",
+      "form": {
+        "newTitle": "New student",
+        "editTitle": "Edit student",
+        "nameEn": "Name (English)",
+        "nameAr": "Name (Arabic)",
+        "grade": "Grade",
+        "active": "Active",
+        "photo": "Photo",
+        "photoHelp": "JPG or PNG. Saved after the student exists.",
+        "save": "Save",
+        "saved": "Saved.",
+        "nameRequired": "This name is required.",
+        "uploadFailed": "The photo could not be uploaded."
+      }
     }
   }
 }
