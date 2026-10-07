@@ -118,7 +118,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T3.04 — Expo push client module
 - [x] T3.05 — Edge Function `notify-dispatch` ⚠ hard
 - [x] T3.06 — Cron schedules + local Vault secrets
-- [ ] T3.07 — Edge Function `push-receipts` + cron
+- [x] T3.07 — Edge Function `push-receipts` + cron
 - [ ] T3.08 — Push registration + Android channel
 - [ ] T3.09 — Notification tap routing + foreground display
 - [ ] T3.10 — Parent home: children cards
