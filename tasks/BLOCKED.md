@@ -27,6 +27,9 @@ Format:
 - Question: Do H0.4 (EAS login, `eas build --profile development` for Android and iOS, install on devices) and tick it. Or tell me to go ahead and write the push/parent/tracking code before the builds exist (I can't test it on a device either way).
 - Answer (human):
 
+## T5.02 — note (no action needed)
+- The new security test found that Supabase's default privileges had left EXECUTE on 29 functions in schema `private` for `anon` and 16 for `authenticated`. They are not reachable through the API (schema not exposed), but I added migration `20260101005100_private_privileges.sql` to lock them down, as skeletons §2 intends. All earlier tests still pass.
+
 ## Device checks pending
 - T0.08: open the app in the Android emulator (`cd apps/mobile && npx expo start`, press `a`) and confirm it shows "OK". Android SDK/emulator was not set up when I ran this; the Android bundle builds and resolves @sst/shared and @sst/i18n.
 - T0.09: rebuild dev client (eas build --profile development) before testing. Note: expo-localization's plugin now takes `supportsRTL` as an option, so I set it there as well as in `extra.supportsRTL`; the expo-location options match skeletons §5.
