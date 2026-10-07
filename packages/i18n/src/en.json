@@ -412,6 +412,23 @@
         "BAD_PHONE": "Phone number is not valid",
         "BAD_RELATIONSHIP": "Relationship must be mother, father, guardian or other"
       }
+    },
+    "buses": {
+      "title": "Buses",
+      "new": "New bus",
+      "edit": "Edit",
+      "delete": "Delete",
+      "labelEn": "Label (English)",
+      "labelAr": "Label (Arabic)",
+      "plate": "Plate",
+      "capacity": "Capacity",
+      "name": "Bus",
+      "save": "Save",
+      "cancel": "Cancel",
+      "empty": "No buses yet.",
+      "labelRequired": "This label is required.",
+      "inUse": "This bus is used by a route. Remove it from its routes first.",
+      "deleteConfirm": "Delete this bus?"
     }
   }
 }

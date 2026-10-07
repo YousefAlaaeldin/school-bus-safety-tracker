@@ -74,7 +74,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T1.58 — Student create/edit + photo upload
 - [x] T1.59 — Guardians panel
 - [x] T1.60 — Roster CSV import
-- [ ] T1.61 — Buses page
+- [x] T1.61 — Buses page
 - [ ] T1.62 — Stops page with map pin picker
 - [ ] T1.63 — Routes list and create
 - [ ] T1.64 — Route detail: stop order and weekly schedule
