@@ -43,6 +43,11 @@ const config: ExpoConfig = {
     'expo-notifications',
     'expo-task-manager',
   ],
+  // Localized app name and iOS permission prompts (Expo: Localization → Translating app metadata).
+  locales: {
+    ar: './locales/ar.json',
+    en: './locales/en.json',
+  },
   extra: {
     supportsRTL: true,
   },

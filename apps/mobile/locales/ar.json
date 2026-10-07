@@ -1,0 +1,10 @@
+{
+  "ios": {
+    "CFBundleDisplayName": "رحلة آمنة",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "اسمح لتطبيق رحلة آمنة بمشاركة موقع الحافلة مع أولياء الأمور أثناء الرحلة، حتى عند إغلاق التطبيق.",
+    "NSLocationWhenInUseUsageDescription": "اسمح لتطبيق رحلة آمنة بعرض موقع الحافلة أثناء الرحلة."
+  },
+  "android": {
+    "app_name": "رحلة آمنة"
+  }
+}

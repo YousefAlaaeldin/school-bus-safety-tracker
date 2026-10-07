@@ -1,0 +1,10 @@
+{
+  "ios": {
+    "CFBundleDisplayName": "SafeRide",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Allow SafeRide to share the bus location with parents during a trip, even when the app is closed.",
+    "NSLocationWhenInUseUsageDescription": "Allow SafeRide to show the bus position during a trip."
+  },
+  "android": {
+    "app_name": "SafeRide"
+  }
+}

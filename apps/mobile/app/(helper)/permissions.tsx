@@ -1,3 +1,4 @@
+import * as IntentLauncher from 'expo-intent-launcher';
 import { useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -5,6 +6,7 @@ import { Linking, Platform, View } from 'react-native';
 import { checkPermissions, ensurePermissions, type PermissionState } from '@/location/ensurePermissions';
 import { Banner } from '@/ui/Banner';
 import { Button } from '@/ui/Button';
+import { Card } from '@/ui/Card';
 import { Screen } from '@/ui/Screen';
 import { Text } from '@/ui/Text';
 import { colors, spacing } from '@/ui/tokens';
@@ -55,6 +57,23 @@ export default function PermissionsScreen() {
             variant="secondary"
             onPress={() => void Linking.openSettings()}
           />
+        ) : null}
+        {Platform.OS === 'android' ? (
+          <Card>
+            <View style={{ gap: spacing[2] }}>
+              <Text variant="button" weight="bold">{t('permissions.battery.title')}</Text>
+              <Text variant="body">1. {t('permissions.battery.step1')}</Text>
+              <Text variant="body">2. {t('permissions.battery.step2')}</Text>
+              <Text variant="body">3. {t('permissions.battery.step3')}</Text>
+              <Button
+                title={t('permissions.battery.open')}
+                variant="secondary"
+                onPress={() =>
+                  void IntentLauncher.startActivityAsync(IntentLauncher.ActivityAction.IGNORE_BATTERY_OPTIMIZATION_SETTINGS)
+                }
+              />
+            </View>
+          </Card>
         ) : null}
         {canGoOn ? (
           <Button
