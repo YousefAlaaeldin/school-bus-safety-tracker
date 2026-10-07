@@ -45,7 +45,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T1.20 — RPCs `get_my_context`, `set_my_locale`
 - [x] T1.21 — RPCs: invites, guardian approval, staff ⚠ hard
 - [x] T1.22 — `generate_trips` ⚠ hard
-- [ ] T1.23 — RLS tests: trips and bus visibility ⚠ hard
+- [x] T1.23 — RLS tests: trips and bus visibility ⚠ hard
 - [ ] T1.24 — `import_roster` RPC
 - [ ] T1.25 — Generate DB types
 
