@@ -15,11 +15,12 @@ Format:
 - Phone sign-in locally needs an SMS provider enabled, even for test-OTP numbers (`phone_provider_disabled` otherwise). I enabled `[auth.sms.twilio]` in `supabase/config.toml` with **dummy** credentials; the test_otp numbers never send an SMS. The real Twilio setup is H6.2.
 - I added `supabase` as a root devDependency (the CLI isn't on PATH on this machine), so `pnpm db:*` scripts work unchanged.
 
-## T3.08 — Push registration + Android channel
-- Tried: nothing yet. T3.08 depends on H0.4 (first development builds on real devices), which is not ticked.
-- Error: dependency missing (human task). This holds back T3.09 to T3.13 and T3.15 to T3.19 (parent app, location tracking, admin alerts mode) and the mobile tasks after them (T4.07, T5.03, T5.05 to T5.08). Backend tasks that do not need it are being done meanwhile.
-- Question: Do H0.4 (EAS login, `eas build --profile development` for Android and iOS, install on devices) and tick it. Or tell me to go ahead and write the push/parent/tracking code before the builds exist (I can't test it on a device either way).
-- Answer (human):
+## T3.08 — resolved
+- H0.4 is ticked (development build runs on the emulator), so T3.08 to T3.13, T3.19, T4.07 and T5.05 to T5.08 were done.
+
+## T6.01 to T6.04 — blocked on human tasks
+- T6.01 and T6.02 need H6.1 (decisions, domain), T6.03 needs H5.1 (Arabic review) and T6.04 needs H6.1 (final name) plus the logo at `assets/brand/icon-1024.png`.
+- Tell me when H5.1 and H6.1 are ticked, or tell me to go ahead with placeholders.
 
 ## T5.02 — note (no action needed)
 - The new security test found that Supabase's default privileges had left EXECUTE on 29 functions in schema `private` for `anon` and 16 for `authenticated`. They are not reachable through the API (schema not exposed), but I added migration `20260101005100_private_privileges.sql` to lock them down, as skeletons §2 intends. All earlier tests still pass.
@@ -40,3 +41,10 @@ Format:
 - T3.16 / T3.17 / T3.18: rebuild dev client (eas build --profile development): expo-task-manager background location, permissions, expo-intent-launcher, localized iOS strings. Then run H3.1 (background tracking + push on two phones).
 - T5.03: rebuild dev client (Sentry native module). Set EXPO_PUBLIC_SENTRY_DSN in apps/mobile/.env when you have a Sentry project (also NEXT_PUBLIC_SENTRY_DSN / SENTRY_DSN for the web app); without a DSN Sentry does nothing.
 <!-- executor adds "- T3.16: verify background pings arrive with screen locked" etc. -->
+- T3.08: push tokens only work on a real device or an emulator with Google Play services AND an FCM `google-services.json` (EAS credentials). If the emulator shows no token row, test on a real Android phone. Check: `select * from push_tokens` after signing in.
+- T3.09: tap a notification from the notification shade; it should open the live map (boarded, picked_up, eta_*) or the parent home.
+- T3.10 to T3.13: sign in as +971500000003 (PARENT_1) after `select public.generate_trips(current_date)`. Home shows Sara and Omar with "Bus at ..."; board Sara from the helper phone and the card changes to "On Bus 12" with a Track button; Report absence and History open.
+- T3.19: sign in as admin-a@example.com / password123 via the staff screen; the alerts list shows, Acknowledge works.
+- T5.05 / T5.06: run the Maestro flows (apps/mobile/.maestro/README.md) in ar and en.
+- T5.07: switch the emulator to airplane mode; the orange offline bar appears on parent and helper screens.
+
