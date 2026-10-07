@@ -12,7 +12,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T0.04 — `packages/shared` skeleton with enums
 - [x] T0.05 — `packages/i18n` skeleton with parity test
 - [x] T0.06 — Root vitest config
-- [ ] T0.07 — Supabase init and local config
+- [x] T0.07 — Supabase init and local config
 - [ ] T0.08 — Expo app scaffold
 - [ ] T0.09 — App config, EAS profiles, env example
 - [ ] T0.10 — Mobile i18n + RTL bootstrap ⚠ hard
