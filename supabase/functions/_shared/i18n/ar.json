@@ -140,6 +140,14 @@
       "locationNeeded": "يلزم إذن الموقع لبدء الرحلة.",
       "completedTitle": "انتهت الرحلة",
       "backHome": "العودة إلى رحلات اليوم"
+    },
+    "rollCall": {
+      "title": "التفقد",
+      "onBoard": "{{boarded}} / {{total}} في الحافلة",
+      "search": "ابحث عن طالب",
+      "confirmButton": "تأكيد التفقد",
+      "absent": "غائب",
+      "sync": "بانتظار المزامنة"
     }
   },
   "admin": {

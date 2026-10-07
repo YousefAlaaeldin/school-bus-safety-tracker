@@ -140,6 +140,14 @@
       "locationNeeded": "Location permission is needed to start the trip.",
       "completedTitle": "Trip completed",
       "backHome": "Back to today's trips"
+    },
+    "rollCall": {
+      "title": "Roll call",
+      "onBoard": "{{boarded}} / {{total}} on board",
+      "search": "Search a student",
+      "confirmButton": "Confirm roll call",
+      "absent": "Absent",
+      "sync": "Waiting to sync"
     }
   },
   "admin": {
