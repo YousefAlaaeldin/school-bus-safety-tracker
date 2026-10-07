@@ -36,7 +36,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T1.11 — RLS helper functions
 - [x] T1.12 — RLS policies: schools, calendar, profiles, memberships, staff invites
 - [x] T1.13 — RLS policies: students, guardian links, invite codes + photo bucket
-- [ ] T1.14 — RLS policies: buses, stops, routes, schedules, route stops, assignments
+- [x] T1.14 — RLS policies: buses, stops, routes, schedules, route stops, assignments
 - [ ] T1.15 — RLS policies: trips and everything else + Realtime
 - [ ] T1.16 — Seed data
 - [ ] T1.17 — Test setup and "RLS on every table" test
