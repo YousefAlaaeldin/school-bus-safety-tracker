@@ -2,10 +2,11 @@ import { formatTime } from '@sst/i18n';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ScrollView, View } from 'react-native';
+import { Alert, ScrollView, View } from 'react-native';
 import { getLanguage } from '@/i18n';
 import { rpcError } from '@/lib/supabase';
 import { useHelperAction } from '@/queue/useHelperAction';
+import { EndTripSheet, useEndTripRejection } from '@/trip/EndTripSheet';
 import { StopSection } from '@/trip/StopSection';
 import { StudentRow, studentName } from '@/trip/StudentRow';
 import { useDropAction } from '@/trip/useDropAction';
@@ -28,6 +29,14 @@ export default function DropScreen() {
   const dropStudents = useDropAction(tripId, dropDistanceWarningM ?? 200);
   const [undo, setUndo] = useState<{ message: string; studentIds: string[] } | null>(null);
   const dismissUndo = useCallback(() => setUndo(null), []);
+  const [endOpen, setEndOpen] = useState(false);
+  const [ending, setEnding] = useState(false);
+  useEndTripRejection(tripId, useCallback(() => setEndOpen(true), []));
+
+  // After the trip ends, go back to today's trips.
+  useEffect(() => {
+    if (trip?.status === 'completed') router.replace('/(helper)');
+  }, [trip?.status, router]);
   const scrollRef = useRef<ScrollView>(null);
   const layouts = useRef<Record<string, number>>({});
   const scrolledTo = useRef<string | null>(null);
@@ -61,6 +70,26 @@ export default function DropScreen() {
     setUndo(null);
     if (!current) return;
     for (const id of current.studentIds) void run('undo_dropped', { p_trip_id: tripId, p_student_id: id });
+  };
+
+  const returnToSchool = (studentId: string, name: string) =>
+    Alert.alert(t('helper.drop.returnToSchool'), t('helper.drop.returnConfirm', { name }), [
+      { text: t('common.cancel'), style: 'cancel' },
+      {
+        text: t('helper.drop.returnToSchool'),
+        style: 'destructive',
+        onPress: () => void run('mark_returned_to_school', { p_trip_id: tripId, p_student_id: studentId }),
+      },
+    ]);
+
+  const endTrip = async (force: boolean, reason: string | null) => {
+    setEnding(true);
+    try {
+      await run('end_trip', { p_trip_id: tripId, p_force: force, p_reason: reason });
+      setEndOpen(false);
+    } finally {
+      setEnding(false);
+    }
   };
 
   if (loading) return <Spinner />;
@@ -144,6 +173,7 @@ export default function DropScreen() {
                       key={s.student_id}
                       student={s}
                       indicator={<View />}
+                      onLongPress={() => returnToSchool(s.student_id, studentName(s))}
                       trailing={<Button title={t('helper.drop.dropped')} onPress={() => void dropAt([{ student_id: s.student_id, name: studentName(s) }], group.stop_id)} />}
                     />
                   ),
@@ -152,9 +182,17 @@ export default function DropScreen() {
           );
         })}
       </ScrollView>
-      <View style={{ paddingVertical: spacing[2] }}>
+      <View style={{ paddingVertical: spacing[2], gap: spacing[2] }}>
         <Button title={t('helper.drop.map')} variant="secondary" onPress={() => router.push(`/(helper)/trip/${tripId}/map`)} />
+        <Button title={t('helper.drop.endTrip')} variant="secondary" onPress={() => setEndOpen(true)} />
       </View>
+      <EndTripSheet
+        visible={endOpen}
+        onBoard={(students ?? []).filter((s) => s.status === 'boarded')}
+        loading={ending}
+        onClose={() => setEndOpen(false)}
+        onEnd={(force, reason) => void endTrip(force, reason)}
+      />
       {undo ? <UndoSnackbar message={undo.message} onUndo={undoLast} onDismiss={dismissUndo} /> : null}
     </Screen>
   );

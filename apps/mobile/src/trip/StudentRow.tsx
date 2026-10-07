@@ -69,6 +69,8 @@ type Props = {
   student: StudentView;
   /** Tapping the row (the big toggle area). */
   onPress?: () => void;
+  /** Long-press menu (e.g. return to school). */
+  onLongPress?: () => void;
   /** Extra controls on the end side (buttons). */
   trailing?: ReactNode;
   /** Strike the name through (e.g. dropped). */
@@ -78,7 +80,7 @@ type Props = {
 };
 
 /** One student: photo, name, a state indicator, a pending spinner dot and any failed-action error. */
-export function StudentRow({ student, onPress, trailing, struck, indicator }: Props) {
+export function StudentRow({ student, onPress, onLongPress, trailing, struck, indicator }: Props) {
   const { t } = useTranslation();
   const absent = student.status === 'absent_reported';
   const boarded = student.status === 'boarded';
@@ -110,8 +112,9 @@ export function StudentRow({ student, onPress, trailing, struck, indicator }: Pr
         accessibilityRole={onPress ? 'button' : undefined}
         accessibilityLabel={studentName(student)}
         accessibilityState={{ checked: boarded }}
-        disabled={!onPress}
+        disabled={!onPress && !onLongPress}
         onPress={onPress}
+        onLongPress={onLongPress}
         style={{ flex: 1, flexDirection: 'row', alignItems: 'center', gap: spacing[3], minHeight: 56 }}
       >
         <StudentPhoto student={student} />

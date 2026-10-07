@@ -187,6 +187,16 @@
       "skipToSchool": "Skip to school",
       "arriveConfirm": "{{count}} students on board. Confirm arrival at school?",
       "confirm": "Confirm"
+    },
+    "endTrip": {
+      "title": "End trip",
+      "confirm": "End the trip?",
+      "confirmButton": "End trip",
+      "onBoardTitle": "Still on board",
+      "onBoardWarning": "These students are still on the bus. Ending now will alert the school.",
+      "endAnyway": "End anyway",
+      "reason": "Reason (required)",
+      "cancel": "Cancel"
     }
   },
   "admin": {

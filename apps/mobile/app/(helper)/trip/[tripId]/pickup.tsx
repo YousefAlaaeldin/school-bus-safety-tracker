@@ -1,9 +1,10 @@
-import { useLocalSearchParams } from 'expo-router';
-import { useCallback, useState } from 'react';
+import { useLocalSearchParams, useRouter } from 'expo-router';
+import { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ScrollView, View } from 'react-native';
+import { Alert, ScrollView, View } from 'react-native';
 import { rpcError } from '@/lib/supabase';
 import { useHelperAction } from '@/queue/useHelperAction';
+import { EndTripSheet, useEndTripRejection } from '@/trip/EndTripSheet';
 import { StopSection } from '@/trip/StopSection';
 import { StudentRow, studentName } from '@/trip/StudentRow';
 import { useTrip } from '@/trip/useTrip';
@@ -22,9 +23,18 @@ export default function PickupScreen() {
   const { tripId } = useLocalSearchParams<{ tripId: string }>();
   const { trip, students, groups, counts, stops, loading, error, refetch } = useTrip(tripId);
   const run = useHelperAction();
+  const router = useRouter();
+  const [endOpen, setEndOpen] = useState(false);
+  const [ending, setEnding] = useState(false);
+  const [arrived, setArrived] = useState(false);
+  useEndTripRejection(tripId, useCallback(() => setEndOpen(true), []));
   const [undo, setUndo] = useState<UndoState | null>(null);
   const [skipped, setSkipped] = useState(false);
   const dismissUndo = useCallback(() => setUndo(null), []);
+
+  useEffect(() => {
+    if (trip?.status === 'completed') router.replace('/(helper)');
+  }, [trip?.status, router]);
 
   if (loading) return <Spinner />;
   if (error || !trip) {
@@ -38,6 +48,28 @@ export default function PickupScreen() {
   const nextStopId = groups?.find((g) => g.rows.some((r) => r.status === 'expected'))?.stop_id ?? null;
   const total = (students?.length ?? 0) - (counts?.absent_reported ?? 0);
   const nobodyLeft = nextStopId === null;
+
+  const arrive = () =>
+    Alert.alert(t('helper.pickup.arrived'), t('helper.pickup.arriveConfirm', { count: counts?.boarded ?? 0 }), [
+      { text: t('common.cancel'), style: 'cancel' },
+      {
+        text: t('helper.pickup.confirm'),
+        onPress: () => {
+          setArrived(true);
+          void run('arrive_at_school', { p_trip_id: tripId });
+        },
+      },
+    ]);
+
+  const endTrip = async (force: boolean, reason: string | null) => {
+    setEnding(true);
+    try {
+      await run('end_trip', { p_trip_id: tripId, p_force: force, p_reason: reason });
+      setEndOpen(false);
+    } finally {
+      setEnding(false);
+    }
+  };
 
   const pickUp = (studentId: string, name: string) => {
     void run('set_boarded', { p_trip_id: tripId, p_student_id: studentId, p_boarded: true });
@@ -101,15 +133,26 @@ export default function PickupScreen() {
           </StopSection>
         ))}
       </ScrollView>
-      {nobodyLeft || skipped ? (
+      {arrived || trip.arrived_school_at ? (
         <View style={{ paddingVertical: spacing[2] }}>
-          <Button title={t('helper.pickup.arrived')} onPress={() => void run('arrive_at_school', { p_trip_id: tripId })} />
+          <Button title={t('helper.drop.endTrip')} onPress={() => setEndOpen(true)} />
+        </View>
+      ) : nobodyLeft || skipped ? (
+        <View style={{ paddingVertical: spacing[2] }}>
+          <Button title={t('helper.pickup.arrived')} onPress={arrive} />
         </View>
       ) : (
         <View style={{ paddingVertical: spacing[2] }}>
           <Button title={t('helper.pickup.skipToSchool')} variant="secondary" onPress={() => setSkipped(true)} />
         </View>
       )}
+      <EndTripSheet
+        visible={endOpen}
+        onBoard={(students ?? []).filter((s) => s.status === 'boarded')}
+        loading={ending}
+        onClose={() => setEndOpen(false)}
+        onEnd={(force, reason) => void endTrip(force, reason)}
+      />
       {undo ? <UndoSnackbar message={undo.message} onUndo={undoLast} onDismiss={dismissUndo} /> : null}
     </Screen>
   );
