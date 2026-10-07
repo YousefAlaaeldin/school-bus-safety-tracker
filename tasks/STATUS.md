@@ -10,7 +10,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T0.02 — pnpm workspace and root scripts
 - [x] T0.03 — Shared TypeScript, ESLint and Prettier config
 - [x] T0.04 — `packages/shared` skeleton with enums
-- [ ] T0.05 — `packages/i18n` skeleton with parity test
+- [x] T0.05 — `packages/i18n` skeleton with parity test
 - [ ] T0.06 — Root vitest config
 - [ ] T0.07 — Supabase init and local config
 - [ ] T0.08 — Expo app scaffold
