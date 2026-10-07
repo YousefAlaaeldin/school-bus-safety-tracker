@@ -18,7 +18,7 @@ Deno.serve(async () => {
   for (let round = 0; round < MAX_ROUNDS; round++) {
     const { data, error } = await supabase.rpc('claim_due_notifications', { p_limit: BATCH });
     if (error) {
-      console.error('claim_due_notifications failed', error.message);
+      console.error({ fn: 'notify-dispatch', event: 'claim_failed', message: error.message });
       break;
     }
     const rows = (data ?? []) as DueNotification[];
@@ -44,7 +44,7 @@ Deno.serve(async () => {
           tickets = await sendPush(built.messages, fetch, accessToken);
         } catch (e) {
           httpError = e instanceof Error ? e.message : 'EXPO_ERROR';
-          console.error('sendPush failed', httpError);
+          console.error({ fn: 'notify-dispatch', event: 'send_failed', message: httpError });
         }
       }
     }

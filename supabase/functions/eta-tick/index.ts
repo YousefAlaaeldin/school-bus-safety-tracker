@@ -19,7 +19,7 @@ Deno.serve(async () => {
 
   const { data, error } = await supabase.rpc('get_eta_work');
   if (error) {
-    console.error('get_eta_work failed', error.message);
+    console.error({ fn: 'eta-tick', event: 'get_eta_work_failed', message: error.message });
     return new Response(JSON.stringify({ error: error.message }), { status: 500 });
   }
   const work = (data ?? []) as Work[];
@@ -35,7 +35,7 @@ Deno.serve(async () => {
       try {
         etas = await routesEtas(item.origin, stops, apiKey!, now, fetch);
       } catch (e) {
-        console.error(`routesEtas failed for trip ${item.trip_id}, using fallback:`, e instanceof Error ? e.message : e);
+        console.error({ fn: 'eta-tick', event: 'routes_failed_using_fallback', trip_id: item.trip_id, message: e instanceof Error ? e.message : String(e) });
         etas = fallbackEtas(item.origin, stops, now);
       }
     }
@@ -44,7 +44,7 @@ Deno.serve(async () => {
       p_etas: etas,
     });
     if (applyError) {
-      console.error(`apply_etas failed for trip ${item.trip_id}`, applyError.message);
+      console.error({ fn: 'eta-tick', event: 'apply_etas_failed', trip_id: item.trip_id, message: applyError.message });
       return;
     }
     alerted += (result as { alerted?: number } | null)?.alerted ?? 0;

@@ -150,7 +150,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T5.01 — Location data purge job
 - [x] T5.02 — Security regression tests
 - [ ] T5.03 — Sentry (mobile)
-- [ ] T5.04 — Sentry (web + Edge Functions logging)
+- [x] T5.04 — Sentry (web + Edge Functions logging)
 - [ ] T5.05 — Maestro setup + sign-in flows (both languages)
 - [ ] T5.06 — Maestro helper trip flows
 - [ ] T5.07 — Offline and error UX pass

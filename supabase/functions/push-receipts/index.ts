@@ -15,7 +15,7 @@ Deno.serve(async () => {
 
   const { data, error } = await supabase.rpc('get_unchecked_receipts', { p_limit: 300 });
   if (error) {
-    console.error('get_unchecked_receipts failed', error.message);
+    console.error({ fn: 'push-receipts', event: 'get_unchecked_failed', message: error.message });
     return new Response(JSON.stringify({ error: error.message }), { status: 500 });
   }
   const rows = (data ?? []) as Unchecked[];
@@ -29,7 +29,7 @@ Deno.serve(async () => {
     receipts = await getReceipts(ticketIds, fetch, accessToken);
   } catch (e) {
     // Try again at the next run; nothing is marked as checked.
-    console.error('getReceipts failed', e instanceof Error ? e.message : e);
+    console.error({ fn: 'push-receipts', event: 'get_receipts_failed', message: e instanceof Error ? e.message : String(e) });
     return new Response(JSON.stringify({ checked: 0 }), { headers: { 'Content-Type': 'application/json' } });
   }
 
@@ -49,7 +49,7 @@ Deno.serve(async () => {
     p_ids: rows.map((r) => r.id),
     p_dead_tokens: [...dead],
   });
-  if (markError) console.error('mark_receipts_checked failed', markError.message);
+  if (markError) console.error({ fn: 'push-receipts', event: 'mark_checked_failed', message: markError.message });
 
   return new Response(JSON.stringify({ checked: rows.length, dead_tokens: dead.size }), {
     headers: { 'Content-Type': 'application/json' },

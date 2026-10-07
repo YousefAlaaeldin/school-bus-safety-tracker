@@ -10,6 +10,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@sentry/nextjs": "^11.4.0",
     "@sst/i18n": "workspace:*",
     "@sst/shared": "workspace:*",
     "@supabase/ssr": "^0.12.7",
