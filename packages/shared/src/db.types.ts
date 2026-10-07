@@ -669,6 +669,9 @@ isOneToOne: false
             "acknowledge_alert":
 { Args: { "p_alert_id": string }; Returns: undefined
                            },
+"apply_etas":
+{ Args: { "p_etas": Json,"p_trip_id": string }; Returns: Json
+                           },
 "approve_guardian_link":
 { Args: { "p_link_id": string }; Returns: undefined
                            },

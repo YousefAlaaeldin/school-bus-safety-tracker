@@ -135,7 +135,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 
 ## Phase 4 — "10 minutes away" alerts, watchdogs, live board  ([phase-4-eta-watchdogs.md](phase-4-eta-watchdogs.md))
 - [x] T4.01 — `get_eta_work` RPC
-- [ ] T4.02 — `apply_etas` RPC
+- [x] T4.02 — `apply_etas` RPC
 - [x] T4.03 — Google Routes API client
 - [x] T4.04 — Straight-line fallback estimator
 - [ ] T4.05 — Edge Function `eta-tick` + cron ⚠ hard
