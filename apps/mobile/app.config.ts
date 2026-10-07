@@ -3,6 +3,7 @@ import type { ExpoConfig } from 'expo/config';
 const config: ExpoConfig = {
   name: 'SafeRide',
   slug: 'saferide',
+  owner: 'joethedev',
   scheme: 'saferide',
   version: '1.0.0',
   orientation: 'portrait',
@@ -52,6 +53,7 @@ const config: ExpoConfig = {
   },
   extra: {
     supportsRTL: true,
+    eas: { projectId: '80815d8e-95c3-4ec6-8c4d-aea7cb6fb517' },
   },
 };
 
