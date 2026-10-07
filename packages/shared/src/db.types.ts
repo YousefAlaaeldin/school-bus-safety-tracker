@@ -638,6 +638,9 @@ isOneToOne: false
 "arrive_at_school":
 { Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_trip_id": string }; Returns: Json
                            },
+"cancel_absence":
+{ Args: { "p_absence_id": string }; Returns: undefined
+                           },
 "confirm_roll_call":
 { Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_trip_id": string }; Returns: Json
                            },
@@ -673,6 +676,9 @@ isOneToOne: false
                            },
 "remove_staff":
 { Args: { "p_membership_id": string }; Returns: undefined
+                           },
+"report_absence":
+{ Args: { "p_directions": (Database["public"]['Enums']["trip_direction"])[],"p_reason": string,"p_service_date": string,"p_student_id": string }; Returns: Json
                            },
 "revoke_guardian_link":
 { Args: { "p_link_id": string }; Returns: undefined
