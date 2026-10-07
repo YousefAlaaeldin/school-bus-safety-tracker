@@ -1,10 +1,11 @@
 import { useQueryClient } from '@tanstack/react-query';
 import { useLocalSearchParams } from 'expo-router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
 import { MY_CONTEXT_KEY } from '@/auth/useMyContext';
 import { rpcError, supabase } from '@/lib/supabase';
+import { useSession } from '@/state/session';
 import { Banner } from '@/ui/Banner';
 import { Button } from '@/ui/Button';
 import { Screen } from '@/ui/Screen';
@@ -16,9 +17,16 @@ export default function InviteScreen() {
   const { t } = useTranslation();
   const queryClient = useQueryClient();
   const params = useLocalSearchParams<{ code?: string }>();
-  const [code, setCode] = useState((params.code ?? '').toUpperCase());
+  const stored = useSession((s) => s.pendingInviteCode);
+  const setStored = useSession((s) => s.setPendingInviteCode);
+  const [code, setCode] = useState((params.code ?? stored ?? '').toUpperCase());
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // The code from a deep link is used once, then cleared.
+  useEffect(() => {
+    if (stored) setStored(null);
+  }, [stored, setStored]);
 
   const submit = async () => {
     setLoading(true);

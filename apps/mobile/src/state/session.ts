@@ -8,8 +8,11 @@ type SessionState = {
   intent: Intent | null;
   /** The role whose home screen was last shown. */
   lastRole: AppRole | null;
+  /** An invite code from a deep link, kept until the invite screen uses it. */
+  pendingInviteCode: string | null;
   setIntent: (intent: Intent | null) => void;
   setLastRole: (role: AppRole | null) => void;
+  setPendingInviteCode: (code: string | null) => void;
 };
 
 export const useSession = create<SessionState>()(
@@ -17,8 +20,10 @@ export const useSession = create<SessionState>()(
     (set) => ({
       intent: null,
       lastRole: null,
+      pendingInviteCode: null,
       setIntent: (intent) => set({ intent }),
       setLastRole: (lastRole) => set({ lastRole }),
+      setPendingInviteCode: (pendingInviteCode) => set({ pendingInviteCode }),
     }),
     { name: 'session', storage: createJSONStorage(() => AsyncStorage) },
   ),
