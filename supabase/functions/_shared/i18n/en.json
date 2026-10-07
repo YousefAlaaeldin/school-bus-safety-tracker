@@ -227,5 +227,74 @@
       "terms": "Terms",
       "support": "Support"
     }
+  },
+  "legal": {
+    "draftNotice": "Draft — pending legal review",
+    "backHome": "Back to home",
+    "updated": "Last updated: placeholder date",
+    "privacy": {
+      "title": "Privacy policy",
+      "intro": "This placeholder explains how SafeRide handles personal data. The final text will be written with legal advice before launch.",
+      "collect": {
+        "title": "What we collect",
+        "body": "We collect names of students and guardians, phone numbers, and the bus location during active trips only. We do not track anyone outside a trip."
+      },
+      "who": {
+        "title": "Who can see it",
+        "body": "Parents see only their own children. Bus helpers see the students on their trips. School administrators see their own school. Nobody else has access."
+      },
+      "retention": {
+        "title": "How long we keep it",
+        "body": "Detailed location history is deleted after a retention period set by the school. Trip records are kept for the school's audit needs."
+      },
+      "children": {
+        "title": "Children's data",
+        "body": "Children's data is added by the school and shared only with their verified guardians. Children do not use the app."
+      },
+      "contact": {
+        "title": "Contact",
+        "body": "Questions about privacy: privacy@saferide.example (placeholder)."
+      },
+      "law": {
+        "title": "Governing law",
+        "body": "Placeholder: the governing law and jurisdiction will be confirmed by counsel."
+      }
+    },
+    "terms": {
+      "title": "Terms of use",
+      "intro": "These placeholder terms describe how SafeRide may be used. The final terms will be reviewed by counsel.",
+      "use": {
+        "title": "Using the service",
+        "body": "The service is for schools, their bus helpers and registered guardians. Accounts must not be shared."
+      },
+      "accuracy": {
+        "title": "Accuracy and availability",
+        "body": "Locations and arrival times are estimates and may be delayed. The service does not replace the school's own safety procedures."
+      },
+      "changes": {
+        "title": "Changes",
+        "body": "We may update these terms. Continued use means you accept the updated terms."
+      },
+      "law": {
+        "title": "Governing law",
+        "body": "Placeholder: the governing law and jurisdiction will be confirmed by counsel."
+      }
+    },
+    "support": {
+      "title": "Support",
+      "intro": "Need help? Start with the answers below, or contact us.",
+      "code": {
+        "title": "I did not receive my sign-in code",
+        "body": "Check that you entered your UAE mobile number correctly, wait 30 seconds and tap Resend."
+      },
+      "child": {
+        "title": "I cannot see my child",
+        "body": "Ask your school to add your phone number, or enter the invite code they gave you."
+      },
+      "contact": {
+        "title": "Contact us",
+        "body": "Email: support@saferide.example (placeholder)."
+      }
+    }
   }
 }
