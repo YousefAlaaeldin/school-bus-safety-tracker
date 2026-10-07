@@ -459,6 +459,40 @@
         "addedNow": "This person already has an account, so they were added right away."
       },
       "cancel": "Cancel"
+    },
+    "calendar": {
+      "title": "School calendar",
+      "weekend": "Weekend days",
+      "weekendHelp": "Change these in Settings.",
+      "days": {
+        "0": "Sunday",
+        "1": "Monday",
+        "2": "Tuesday",
+        "3": "Wednesday",
+        "4": "Thursday",
+        "5": "Friday",
+        "6": "Saturday"
+      },
+      "date": "Date",
+      "type": "Type",
+      "note": "Note",
+      "amOverride": "Morning departure",
+      "pmOverride": "Afternoon departure",
+      "types": {
+        "holiday": "Holiday",
+        "closure": "Closure",
+        "early_dismissal": "Early dismissal",
+        "ramadan_hours": "Ramadan hours"
+      },
+      "add": "Add a day",
+      "edit": "Edit",
+      "delete": "Delete",
+      "save": "Save",
+      "cancel": "Cancel",
+      "empty": "No upcoming days.",
+      "dateRequired": "Choose a date.",
+      "duplicate": "This date already has an entry.",
+      "deleteConfirm": "Delete this day?"
     }
   }
 }
