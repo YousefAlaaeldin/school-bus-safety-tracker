@@ -3,7 +3,7 @@ import * as SQLite from 'expo-sqlite';
 
 let dbPromise: Promise<SQLite.SQLiteDatabase> | null = null;
 
-function getDb(): Promise<SQLite.SQLiteDatabase> {
+export function getDb(): Promise<SQLite.SQLiteDatabase> {
   dbPromise ??= SQLite.openDatabaseAsync('queue.db').then(async (db) => {
     await db.execAsync('create table if not exists actions (id text primary key, json text not null)');
     return db;
