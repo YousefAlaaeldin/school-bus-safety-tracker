@@ -26,10 +26,10 @@ const STOP_A2 = { lat: 25.079, lng: 55.219 };
 const PARENT_1 = 'a0000000-0000-0000-0000-000000000003';
 const PARENT_2 = 'a0000000-0000-0000-0000-000000000004';
 
-async function expectOk<T>(p: PromiseLike<{ data: T; error: { message: string } | null }>): Promise<T> {
+async function expectOk<T>(p: PromiseLike<{ data: T; error: { message: string } | null }>): Promise<NonNullable<T>> {
   const { data, error } = await p;
   if (error) throw new Error(error.message);
-  return data;
+  return (data ?? ([] as unknown)) as NonNullable<T>;
 }
 
 async function wipeDate(service: SupabaseClient) {
