@@ -50,7 +50,8 @@ export default function OtpScreen() {
   );
 
   const onChange = (text: string) => {
-    const digits = text.replace(/\D/g, '').slice(0, 6);
+    const western = text.replace(/[٠-٩۰-۹]/g, (c) => String(c.charCodeAt(0) & 0xf));
+    const digits = western.replace(/\D/g, '').slice(0, 6);
     setCode(digits);
     if (digits.length === 6) void verify(digits);
   };

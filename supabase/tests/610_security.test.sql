@@ -44,7 +44,7 @@ select is(
      and p.proname not in (
        'is_school_admin', 'is_school_helper', 'is_school_staff', 'my_student_ids', 'my_tracking_student_ids',
        'is_guardian_in_school', 'is_trip_helper', 'trip_school_id', 'can_view_bus', 'helper_student_ids',
-       'helper_stop_ids', 'guardian_stop_ids', 'admin_can_see_profile')),
+       'helper_stop_ids', 'guardian_stop_ids', 'guardian_route_ids', 'admin_can_see_profile')),
   0, 'no private function except the RLS helpers is executable by authenticated');
 
 select is(

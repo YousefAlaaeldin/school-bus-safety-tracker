@@ -17,7 +17,9 @@ export function PhoneField({ label, error, onChangeE164 }: Props) {
   const [digits, setDigits] = useState('');
 
   const handleChange = (text: string) => {
-    let d = text.replace(/\D/g, '');
+    // Arabic-Indic (٠-٩) and Persian (۰-۹) digits from an Arabic keyboard become 0-9.
+    const western = text.replace(/[٠-٩۰-۹]/g, (c) => String(c.charCodeAt(0) & 0xf));
+    let d = western.replace(/\D/g, '');
     if (d.startsWith('00971')) d = d.slice(5);
     else if (d.startsWith('971')) d = d.slice(3);
     if (d.startsWith('0')) d = d.slice(1);
