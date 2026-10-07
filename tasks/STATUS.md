@@ -108,7 +108,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T2.22 — Sync status indicator
 - [x] T2.23 — Trip map tab
 - [x] T2.30 — Today's trips page
-- [ ] T2.31 — Trip detail + audit timeline
+- [x] T2.31 — Trip detail + audit timeline
 - [ ] T2.32 — Alerts inbox
 
 ## Phase 3 — Push notifications, parent app, live bus tracking  ([phase-3-parents-tracking.md](phase-3-parents-tracking.md))

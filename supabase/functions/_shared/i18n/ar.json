@@ -621,6 +621,39 @@
       "save": "حفظ",
       "cancel": "إلغاء",
       "empty": "لا توجد رحلات في هذا التاريخ."
+    },
+    "tripDetail": {
+      "title": "تفاصيل الرحلة",
+      "students": "الطلاب",
+      "student": "الطالب",
+      "stop": "المحطة",
+      "status": "الحالة",
+      "boardedAt": "وقت الصعود",
+      "droppedAt": "وقت الإنزال",
+      "distance": "المسافة عند الإنزال",
+      "meters": "{{count}} م",
+      "timeline": "السجل الزمني",
+      "syncedLate": "تمت المزامنة متأخرًا",
+      "deviceTime": "وقت الهاتف {{time}}",
+      "map": "الخريطة",
+      "by": "بواسطة {{name}}",
+      "noEvents": "لا توجد أحداث بعد.",
+      "back": "العودة إلى الرحلات"
+    },
+    "events": {
+      "trip_started": "بدأت الرحلة",
+      "student_boarded": "صعد إلى الحافلة",
+      "student_unboarded": "إلغاء الصعود",
+      "roll_call_confirmed": "تم تأكيد التفقد",
+      "student_dropped": "تم الإنزال",
+      "student_drop_undone": "تم التراجع عن الإنزال",
+      "student_no_show": "لم يحضر",
+      "student_no_show_undone": "تم التراجع عن عدم الحضور",
+      "student_returned": "أُعيد إلى المدرسة",
+      "arrived_school": "وصلت إلى المدرسة",
+      "trip_ended": "انتهت الرحلة",
+      "absence_reported": "تم الإبلاغ عن الغياب",
+      "absence_cancelled": "تم إلغاء الغياب"
     }
   },
   "status": {

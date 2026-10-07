@@ -621,6 +621,39 @@
       "save": "Save",
       "cancel": "Cancel",
       "empty": "No trips on this date."
+    },
+    "tripDetail": {
+      "title": "Trip details",
+      "students": "Students",
+      "student": "Student",
+      "stop": "Stop",
+      "status": "Status",
+      "boardedAt": "Boarded at",
+      "droppedAt": "Dropped at",
+      "distance": "Drop distance",
+      "meters": "{{count}} m",
+      "timeline": "Timeline",
+      "syncedLate": "synced late",
+      "deviceTime": "phone time {{time}}",
+      "map": "Map",
+      "by": "by {{name}}",
+      "noEvents": "No events yet.",
+      "back": "Back to trips"
+    },
+    "events": {
+      "trip_started": "Trip started",
+      "student_boarded": "Boarded",
+      "student_unboarded": "Un-boarded",
+      "roll_call_confirmed": "Roll call confirmed",
+      "student_dropped": "Dropped off",
+      "student_drop_undone": "Drop-off undone",
+      "student_no_show": "No-show",
+      "student_no_show_undone": "No-show undone",
+      "student_returned": "Returned to school",
+      "arrived_school": "Arrived at school",
+      "trip_ended": "Trip ended",
+      "absence_reported": "Absence reported",
+      "absence_cancelled": "Absence cancelled"
     }
   },
   "status": {
