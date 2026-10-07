@@ -653,6 +653,9 @@ isOneToOne: false
 "invite_staff":
 { Args: { "p_display_name": string,"p_email": string,"p_phone": string,"p_role": Database["public"]['Enums']["membership_role"],"p_school_id": string }; Returns: Json
                            },
+"mark_dropped":
+{ Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_student_id": string,"p_trip_id": string }; Returns: Json
+                           },
 "redeem_invite":
 { Args: { "p_code": string }; Returns: Json
                            },
@@ -673,6 +676,9 @@ isOneToOne: false
                            },
 "start_trip":
 { Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_trip_id": string }; Returns: Json
+                           },
+"undo_dropped":
+{ Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_student_id": string,"p_trip_id": string }; Returns: Json
                            }
           }
           Enums: {
