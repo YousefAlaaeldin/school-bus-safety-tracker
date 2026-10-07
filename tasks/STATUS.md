@@ -94,7 +94,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [ ] T2.08 — `report_absence`, `cancel_absence`
 - [ ] T2.09 — Regenerate types
 - [x] T2.10 — Offline action queue core ⚠ hard
-- [ ] T2.11 — Trip view reducer + helpers
+- [x] T2.11 — Trip view reducer + helpers
 - [ ] T2.12 — SQLite queue store + drain runner + `useHelperAction`
 - [ ] T2.13 — `useTrip(tripId)` hook
 - [ ] T2.14 — Helper home: today's trips

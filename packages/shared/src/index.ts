@@ -3,3 +3,6 @@ export * from './app';
 export * from './routing';
 export * from './queue/queue';
 export * from './queue/memoryStore';
+export * from './trip/view';
+export * from './geo';
+export * from './time';
