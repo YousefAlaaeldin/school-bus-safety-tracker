@@ -1,0 +1,33 @@
+// Pure TS with no imports, so the same file runs in Node, React Native and Deno.
+
+export type Locale = 'ar' | 'en';
+export const TIME_ZONE = 'Asia/Dubai';
+
+function localeTag(locale: Locale): string {
+  return locale === 'ar' ? 'ar-AE-u-nu-latn' : 'en-AE';
+}
+
+/** "3:07 PM" / "3:07 م". Western digits always. */
+export function formatTime(iso: string, locale: Locale): string {
+  return new Intl.DateTimeFormat(localeTag(locale), {
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+    timeZone: TIME_ZONE,
+  }).format(new Date(iso));
+}
+
+/** "Mon 7 Jan" / "الاثنين 7 يناير". Western digits always. */
+export function formatDate(isoOrDate: string, locale: Locale): string {
+  return new Intl.DateTimeFormat(localeTag(locale), {
+    weekday: 'short',
+    day: 'numeric',
+    month: 'short',
+    timeZone: TIME_ZONE,
+  }).format(new Date(isoOrDate));
+}
+
+/** Wraps text in Unicode FSI…PDI (⁨ … ⁩) so numbers/Latin text don't scramble inside Arabic. */
+export function isolate(text: string): string {
+  return `⁨${text}⁩`;
+}

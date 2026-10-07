@@ -1,0 +1,79 @@
+// Pure. No imports except ./format. Also runs in Deno once copied (see tools/scripts/i18n-sync.ts).
+import { formatTime, isolate, type Locale } from './format';
+
+export type NotificationParams = {
+  child_ar?: string;
+  child_en?: string;
+  bus_ar?: string;
+  bus_en?: string;
+  stop_ar?: string;
+  stop_en?: string;
+  names_ar?: string;
+  names_en?: string;
+  time_iso?: string;
+  minutes?: number;
+  count?: number;
+  reason?: string;
+};
+export type Messages = Record<string, unknown>;
+
+function lookup(messages: Messages, path: string): string | undefined {
+  let node: unknown = messages;
+  for (const part of path.split('.')) {
+    if (node === null || typeof node !== 'object') return undefined;
+    node = (node as Record<string, unknown>)[part];
+  }
+  return typeof node === 'string' ? node : undefined;
+}
+
+function localized(
+  params: NotificationParams,
+  base: 'child' | 'bus' | 'stop' | 'names',
+  locale: Locale,
+): string {
+  const other: Locale = locale === 'ar' ? 'en' : 'ar';
+  const p = params as Record<string, string | number | undefined>;
+  return String(p[`${base}_${locale}`] ?? p[`${base}_${other}`] ?? '');
+}
+
+function resolve(name: string, locale: Locale, params: NotificationParams): string {
+  switch (name) {
+    case 'child':
+    case 'bus':
+    case 'stop':
+    case 'names':
+      return localized(params, name, locale);
+    case 'time':
+      return params.time_iso ? formatTime(params.time_iso, locale) : '';
+    case 'minutes':
+      return String(params.minutes ?? '');
+    case 'count':
+      return String(params.count ?? '');
+    case 'reason':
+      return params.reason ?? '';
+    default:
+      return '';
+  }
+}
+
+function fill(template: string, locale: Locale, params: NotificationParams): string {
+  return template.replace(/\{\{\s*(\w+)\s*\}\}/g, (_match, name: string) => {
+    const value = resolve(name, locale, params);
+    return locale === 'ar' && name !== 'names' ? isolate(value) : value;
+  });
+}
+
+/** Throws if the template key is missing. */
+export function renderNotification(
+  messages: Messages,
+  type: string,
+  locale: Locale,
+  params: NotificationParams,
+): { title: string; body: string } {
+  const title = lookup(messages, `notif.${type}.title`);
+  const body = lookup(messages, `notif.${type}.body`);
+  if (title === undefined || body === undefined) {
+    throw new Error(`Missing notification template: ${type}`);
+  }
+  return { title: fill(title, locale, params), body: fill(body, locale, params) };
+}
