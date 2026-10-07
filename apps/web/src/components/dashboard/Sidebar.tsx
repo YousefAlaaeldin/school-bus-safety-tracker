@@ -19,7 +19,7 @@ const ITEMS = [
 ] as const;
 
 /** A sidebar on the start side from 768px up; a top menu below that. */
-export function Sidebar() {
+export function Sidebar({ alertCount = 0 }: { alertCount?: number }) {
   const t = useTranslations('dashboard.nav');
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -51,6 +51,11 @@ export function Sidebar() {
               }`}
             >
               {t(item.key)}
+              {item.key === 'alerts' && alertCount > 0 ? (
+                <span className="ms-2 inline-flex min-w-5 items-center justify-center rounded-full bg-red-600 px-1.5 text-xs font-bold text-white">
+                  {alertCount}
+                </span>
+              ) : null}
             </Link>
           </li>
         ))}

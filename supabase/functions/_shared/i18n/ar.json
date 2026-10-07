@@ -654,6 +654,29 @@
       "trip_ended": "انتهت الرحلة",
       "absence_reported": "تم الإبلاغ عن الغياب",
       "absence_cancelled": "تم إلغاء الغياب"
+    },
+    "alerts": {
+      "title": "التنبيهات",
+      "filterOpen": "غير مؤكدة",
+      "filterAll": "الكل",
+      "empty": "لا توجد تنبيهات.",
+      "acknowledge": "تأكيد الاستلام",
+      "acknowledged": "تم الاستلام",
+      "trip": "الرحلة",
+      "students": "الطلاب: {{names}}",
+      "reason": "السبب: {{reason}}",
+      "severity": {
+        "info": "معلومة",
+        "warning": "تحذير",
+        "critical": "حرج"
+      },
+      "roll_call_missing": "طلاب غائبون عن التفقد",
+      "no_show": "طالب لم يتم اصطحابه",
+      "student_returned": "أُعيد طالب إلى المدرسة",
+      "trip_forced_end": "انتهت الرحلة مع وجود طلاب في الحافلة",
+      "lost_contact": "انقطع الاتصال بالحافلة",
+      "stationary": "الحافلة متوقفة",
+      "overdue_trip": "الرحلة متأخرة"
     }
   },
   "status": {

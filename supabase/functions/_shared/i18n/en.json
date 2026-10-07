@@ -654,6 +654,29 @@
       "trip_ended": "Trip ended",
       "absence_reported": "Absence reported",
       "absence_cancelled": "Absence cancelled"
+    },
+    "alerts": {
+      "title": "Alerts",
+      "filterOpen": "Unacknowledged",
+      "filterAll": "All",
+      "empty": "No alerts.",
+      "acknowledge": "Acknowledge",
+      "acknowledged": "Acknowledged",
+      "trip": "Trip",
+      "students": "Students: {{names}}",
+      "reason": "Reason: {{reason}}",
+      "severity": {
+        "info": "Info",
+        "warning": "Warning",
+        "critical": "Critical"
+      },
+      "roll_call_missing": "Students missing at roll call",
+      "no_show": "Student not picked up",
+      "student_returned": "Student returned to school",
+      "trip_forced_end": "Trip ended with students on board",
+      "lost_contact": "Lost contact with the bus",
+      "stationary": "Bus has not moved",
+      "overdue_trip": "Trip is overdue"
     }
   },
   "status": {

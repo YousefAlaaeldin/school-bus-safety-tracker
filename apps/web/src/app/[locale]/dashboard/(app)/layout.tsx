@@ -3,6 +3,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import type { ReactNode } from 'react';
 import { LocaleSwitch } from '@/components/LocaleSwitch';
+import { RealtimeRefresh } from '@/components/dashboard/RealtimeRefresh';
 import { Sidebar } from '@/components/dashboard/Sidebar';
 import { SignOutButton } from '@/components/dashboard/SignOutButton';
 import { routing } from '@/i18n/routing';
@@ -27,10 +28,16 @@ export default async function DashboardLayout({
     .select('name_ar, name_en')
     .eq('id', schoolId)
     .single();
+  const { count: openAlerts } = await supabase
+    .from('alerts')
+    .select('id', { count: 'exact', head: true })
+    .eq('school_id', schoolId)
+    .is('acknowledged_at', null);
   const schoolName = locale === 'ar' ? school?.name_ar : school?.name_en;
 
   return (
     <div className="flex min-h-screen flex-col bg-neutral-50">
+      <RealtimeRefresh table="alerts" filter={`school_id=eq.${schoolId}`} />
       <header className="flex items-center justify-between gap-3 border-b border-neutral-200 bg-white px-4 py-3">
         <span className="truncate text-lg font-bold text-emerald-800">{schoolName}</span>
         <div className="flex items-center gap-2">
@@ -39,7 +46,7 @@ export default async function DashboardLayout({
         </div>
       </header>
       <div className="flex flex-1 flex-col md:flex-row">
-        <Sidebar />
+        <Sidebar alertCount={openAlerts ?? 0} />
         <main className="flex-1 p-4 md:p-6">{children}</main>
       </div>
     </div>
