@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { initI18n } from '@/i18n';
 import { AuthGate } from '@/auth/AuthGate';
 import { AppProviders } from '@/providers/AppProviders';
+import { PushRegistration } from '@/push/PushRegistration';
 import { initSentry, wrap } from '@/lib/sentry';
 import { fontAssets } from '@/ui/fonts';
 
@@ -30,6 +31,7 @@ function RootLayout() {
   return (
     <AppProviders>
       <AuthGate>
+        <PushRegistration />
         <Slot />
       </AuthGate>
     </AppProviders>

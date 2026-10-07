@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Pressable, View } from 'react-native';
 import { useMyContext } from '@/auth/useMyContext';
 import { getLanguage, setLanguage } from '@/i18n';
+import { unregisterPush } from '@/push/registerPush';
 import { supabase } from '@/lib/supabase';
 import { useSession } from '@/state/session';
 import { Button } from '@/ui/Button';
@@ -58,12 +59,7 @@ export function SettingsScreen() {
 
   const signOut = async () => {
     setLastRole(null);
-    try {
-      // unregister_push_token arrives with push registration (T3.08); ignore until it exists.
-      await (supabase.rpc as unknown as (fn: string) => PromiseLike<unknown>)('unregister_push_token');
-    } catch {
-      // not available yet, or offline: signing out must still work
-    }
+    await unregisterPush();
     await supabase.auth.signOut();
   };
 

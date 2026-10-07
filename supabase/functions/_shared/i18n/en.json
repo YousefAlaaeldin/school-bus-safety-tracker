@@ -120,6 +120,9 @@
   "parent": {
     "home": {
       "title": "My children"
+    },
+    "notifications": {
+      "channelName": "Bus safety alerts"
     }
   },
   "helper": {
@@ -810,6 +813,12 @@
       "step2": "Find this app and choose \"Don't optimize\" or \"Unrestricted\".",
       "step3": "Come back here and start the trip.",
       "open": "Open battery settings"
+    },
+    "notifications": {
+      "title": "Allow notifications",
+      "why": "We send alerts when a child boards, is dropped off, or the bus is approaching. Turn notifications on to receive them.",
+      "allow": "Allow",
+      "later": "Not now"
     }
   }
 }

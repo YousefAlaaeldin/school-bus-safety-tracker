@@ -20,7 +20,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T0.12 — Next.js scaffold with Tailwind
 - [x] T0.13 — Web i18n routing (`ar` default, `en`), `dir` attribute
 - [x] T0.14 — CI workflow
-- [ ] H0.4 — First development builds on real devices 👤
+- [x] H0.4 — First development builds on real devices 👤
 
 ## Phase 1a — Database foundation  ([phase-1-database.md](phase-1-database.md))
 - [x] T1.01 — Extensions and private schema
@@ -119,7 +119,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T3.05 — Edge Function `notify-dispatch` ⚠ hard
 - [x] T3.06 — Cron schedules + local Vault secrets
 - [x] T3.07 — Edge Function `push-receipts` + cron
-- [ ] T3.08 — Push registration + Android channel
+- [x] T3.08 — Push registration + Android channel
 - [ ] T3.09 — Notification tap routing + foreground display
 - [ ] T3.10 — Parent home: children cards
 - [ ] T3.11 — Parent live map

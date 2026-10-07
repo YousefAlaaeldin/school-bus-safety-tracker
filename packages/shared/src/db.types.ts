@@ -739,6 +739,9 @@ isOneToOne: false
 "redeem_invite":
 { Args: { "p_code": string }; Returns: Json
                            },
+"register_push_token":
+{ Args: { "p_platform": Database["public"]['Enums']["device_platform"],"p_token": string }; Returns: undefined
+                           },
 "remove_staff":
 { Args: { "p_membership_id": string }; Returns: undefined
                            },
@@ -768,6 +771,9 @@ isOneToOne: false
                            },
 "undo_no_show":
 { Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_student_id": string,"p_trip_id": string }; Returns: Json
+                           },
+"unregister_push_token":
+{ Args: { "p_token": string }; Returns: undefined
                            }
           }
           Enums: {
