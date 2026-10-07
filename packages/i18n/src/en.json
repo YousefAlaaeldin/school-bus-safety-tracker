@@ -226,6 +226,12 @@
       "privacy": "Privacy",
       "terms": "Terms",
       "support": "Support"
+    },
+    "invite": {
+      "title": "Open SafeRide",
+      "opening": "Opening the app…",
+      "install": "Install the app, then enter this code",
+      "yourCode": "Your invite code"
     }
   },
   "legal": {
