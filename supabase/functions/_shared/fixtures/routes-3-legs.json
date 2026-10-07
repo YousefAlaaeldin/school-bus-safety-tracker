@@ -1,0 +1,11 @@
+{
+  "routes": [
+    {
+      "legs": [
+        { "duration": "300s" },
+        { "duration": "420s" },
+        { "duration": "180s" }
+      ]
+    }
+  ]
+}
