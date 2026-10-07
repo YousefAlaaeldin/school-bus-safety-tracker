@@ -63,7 +63,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T1.40 — Settings screen (shared)
 - [x] T1.41 — Invite deep link route
 - [x] T1.42 — Staff screen: web dashboard + sign in for alerts
-- [ ] T1.50 — Supabase clients for Next.js
+- [x] T1.50 — Supabase clients for Next.js
 - [ ] T1.51 — Web landing page
 - [ ] T1.52 — Privacy, terms, support pages
 - [ ] T1.53 — Invite link page
