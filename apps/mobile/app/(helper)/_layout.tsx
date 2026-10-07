@@ -10,6 +10,7 @@ import { startQueueRunner } from '@/queue/runner';
 import { SyncBadge } from '@/queue/SyncBadge';
 import { setSentryRole } from '@/lib/sentry';
 import { useSession } from '@/state/session';
+import { OfflineBanner } from '@/ui/OfflineBanner';
 import { spacing } from '@/ui/tokens';
 
 export default function HelperLayout() {
@@ -36,6 +37,7 @@ export default function HelperLayout() {
 
   return (
     <View style={{ flex: 1 }}>
+      <OfflineBanner />
       <Stack screenOptions={{ headerShown: false }} />
       {/* The sync badge sits at the top end of every helper screen. */}
       <View pointerEvents="box-none" style={{ position: 'absolute', top: insets.top + spacing[2], end: spacing[4] }}>

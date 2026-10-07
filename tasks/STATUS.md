@@ -153,7 +153,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T5.04 — Sentry (web + Edge Functions logging)
 - [x] T5.05 — Maestro setup + sign-in flows (both languages)
 - [x] T5.06 — Maestro helper trip flows
-- [ ] T5.07 — Offline and error UX pass
+- [x] T5.07 — Offline and error UX pass
 - [ ] T5.08 — Accessibility pass
 - [ ] H5.1 — Arabic review 👤
 - [ ] H5.2 — Field-test runbook 👤

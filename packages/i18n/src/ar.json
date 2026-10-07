@@ -10,7 +10,8 @@
     "signOut": "تسجيل الخروج",
     "language": "اللغة",
     "arabic": "العربية",
-    "english": "English"
+    "english": "English",
+    "offline": "لا يوجد اتصال. يتم عرض المعلومات المحفوظة."
   },
   "errors": {
     "NOT_AUTHENTICATED": "يرجى تسجيل الدخول للمتابعة.",
@@ -207,7 +208,8 @@
         "goBack": "رجوع",
         "confirmReport": "تأكيد وإبلاغ",
         "confirm": "تأكيد"
-      }
+      },
+      "noResults": "لا يوجد طلاب."
     },
     "drop": {
       "title": "الإنزال",

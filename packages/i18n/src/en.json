@@ -10,7 +10,8 @@
     "signOut": "Sign out",
     "language": "Language",
     "arabic": "العربية",
-    "english": "English"
+    "english": "English",
+    "offline": "No connection. Showing saved information."
   },
   "errors": {
     "NOT_AUTHENTICATED": "Please sign in to continue.",
@@ -207,7 +208,8 @@
         "goBack": "Go back",
         "confirmReport": "Confirm & report",
         "confirm": "Confirm"
-      }
+      },
+      "noResults": "No students found."
     },
     "drop": {
       "title": "Drop-off",

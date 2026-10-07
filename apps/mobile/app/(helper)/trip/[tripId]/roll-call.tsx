@@ -84,6 +84,7 @@ export default function RollCallScreen() {
         data={rows}
         keyExtractor={(s) => s.student_id}
         contentContainerStyle={{ gap: spacing[2], paddingBottom: spacing[6] }}
+        ListEmptyComponent={<Text variant="body" style={{ color: colors.muted }}>{t('helper.rollCall.noResults')}</Text>}
         renderItem={({ item }) => (
           <StudentRow student={item} onPress={() => toggle(item.student_id, item.status === 'boarded')} />
         )}
