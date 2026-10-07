@@ -332,6 +332,21 @@
     "live": {
       "title": "اللوحة المباشرة",
       "placeholder": "ستظهر مواقع الحافلات المباشرة هنا."
+    },
+    "students": {
+      "title": "الطلاب",
+      "search": "بحث",
+      "searchPlaceholder": "ابحث بالاسم",
+      "new": "طالب جديد",
+      "name": "الاسم",
+      "grade": "الصف",
+      "guardians": "أولياء الأمور",
+      "guardiansCount": "{{total}} ({{pending}} قيد الانتظار)",
+      "status": "الحالة",
+      "active": "نشط",
+      "inactive": "غير نشط",
+      "edit": "تعديل",
+      "empty": "لا يوجد طلاب."
     }
   }
 }

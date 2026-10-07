@@ -332,6 +332,21 @@
     "live": {
       "title": "Live board",
       "placeholder": "Live bus positions will appear here."
+    },
+    "students": {
+      "title": "Students",
+      "search": "Search",
+      "searchPlaceholder": "Search by name",
+      "new": "New student",
+      "name": "Name",
+      "grade": "Grade",
+      "guardians": "Guardians",
+      "guardiansCount": "{{total}} ({{pending}} pending)",
+      "status": "Status",
+      "active": "Active",
+      "inactive": "Inactive",
+      "edit": "Edit",
+      "empty": "No students found."
     }
   }
 }
