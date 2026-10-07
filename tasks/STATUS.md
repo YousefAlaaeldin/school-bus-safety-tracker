@@ -113,7 +113,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 
 ## Phase 3 — Push notifications, parent app, live bus tracking  ([phase-3-parents-tracking.md](phase-3-parents-tracking.md))
 - [x] T3.01 — Notification renderer + time formatting
-- [ ] T3.02 — i18n sync script for Edge Functions
+- [x] T3.02 — i18n sync script for Edge Functions
 - [ ] T3.03 — RPCs: claim/complete notifications, receipts
 - [ ] T3.04 — Expo push client module
 - [ ] T3.05 — Edge Function `notify-dispatch` ⚠ hard
