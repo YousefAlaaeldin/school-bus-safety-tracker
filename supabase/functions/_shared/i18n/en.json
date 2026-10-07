@@ -203,6 +203,10 @@
       "failedTitle": "Some actions could not be saved",
       "dismiss": "Dismiss",
       "close": "Close"
+    },
+    "tracking": {
+      "notificationTitle": "Sharing the bus location",
+      "notificationBody": "Parents can see the bus during this trip."
     }
   },
   "admin": {

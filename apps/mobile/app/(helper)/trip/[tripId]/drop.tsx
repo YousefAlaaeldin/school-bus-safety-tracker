@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Alert, ScrollView, View } from 'react-native';
 import { getLanguage } from '@/i18n';
 import { rpcError } from '@/lib/supabase';
+import { stopBusTracking } from '@/location/backgroundTask';
 import { useHelperAction } from '@/queue/useHelperAction';
 import { EndTripSheet, useEndTripRejection } from '@/trip/EndTripSheet';
 import { StopSection } from '@/trip/StopSection';
@@ -86,6 +87,7 @@ export default function DropScreen() {
     setEnding(true);
     try {
       await run('end_trip', { p_trip_id: tripId, p_force: force, p_reason: reason });
+      await stopBusTracking().catch(() => {});
       setEndOpen(false);
     } finally {
       setEnding(false);

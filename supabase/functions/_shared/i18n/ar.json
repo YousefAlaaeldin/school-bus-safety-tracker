@@ -203,6 +203,10 @@
       "failedTitle": "تعذّر حفظ بعض الإجراءات",
       "dismiss": "إخفاء",
       "close": "إغلاق"
+    },
+    "tracking": {
+      "notificationTitle": "مشاركة موقع الحافلة",
+      "notificationBody": "يمكن لأولياء الأمور رؤية الحافلة خلال هذه الرحلة."
     }
   },
   "admin": {

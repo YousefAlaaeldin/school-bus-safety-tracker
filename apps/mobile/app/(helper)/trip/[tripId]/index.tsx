@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
 import { getLanguage } from '@/i18n';
 import { rpcError } from '@/lib/supabase';
+import { getActiveTripId } from '@/location/activeTrip';
+import { startBusTracking } from '@/location/backgroundTask';
 import { useHelperAction } from '@/queue/useHelperAction';
 import { useTrip } from '@/trip/useTrip';
 import { Banner } from '@/ui/Banner';
@@ -24,6 +26,14 @@ export default function TripRouter() {
   const run = useHelperAction();
   const [message, setMessage] = useState<string | null>(null);
   const [starting, setStarting] = useState(false);
+
+  // Share the bus location while the trip is under way (also when an already started trip is reopened).
+  useEffect(() => {
+    if (!trip || (trip.status !== 'roll_call' && trip.status !== 'in_progress')) return;
+    void getActiveTripId().then((active) => {
+      if (active !== trip.id) void startBusTracking(trip.id, t).catch(() => {});
+    });
+  }, [trip?.id, trip?.status, t]);
 
   // Send the helper to the right screen for the direction and status.
   useEffect(() => {

@@ -1,3 +1,4 @@
+import '../src/location/backgroundTask';
 import { useFonts } from 'expo-font';
 import { Slot } from 'expo-router';
 import { useEffect, useState } from 'react';
