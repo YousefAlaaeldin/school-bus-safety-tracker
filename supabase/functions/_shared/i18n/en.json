@@ -104,7 +104,18 @@
     "otpHelp": "We sent a 6-digit code to {{phone}}.",
     "resend": "Resend code",
     "resendIn": "Resend in {{seconds}}s",
-    "wrongCode": "That code is not correct. Try again."
+    "wrongCode": "That code is not correct. Try again.",
+    "staff": {
+      "title": "School staff",
+      "help": "Manage students, buses and routes on the web dashboard.",
+      "openDashboard": "Open web dashboard",
+      "alertsTitle": "Get school alerts on this phone",
+      "alertsHelp": "Sign in with your school email to receive urgent alerts.",
+      "email": "Email",
+      "password": "Password",
+      "signIn": "Sign in",
+      "wrongCredentials": "Wrong email or password."
+    }
   },
   "parent": {
     "home": {
