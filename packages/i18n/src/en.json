@@ -597,6 +597,30 @@
       "invalid": "Please check the highlighted fields.",
       "required": "Required.",
       "range": "Enter a whole number in the allowed range."
+    },
+    "trips": {
+      "title": "Today's trips",
+      "date": "Date",
+      "show": "Show",
+      "route": "Route",
+      "direction": "Direction",
+      "morning": "Morning",
+      "afternoon": "Afternoon",
+      "bus": "Bus",
+      "helper": "Helper",
+      "status": "Status",
+      "departure": "Departure",
+      "boarded": "Boarded",
+      "missing": "Missing",
+      "dropped": "Dropped",
+      "absent": "Absent",
+      "details": "Details",
+      "changeHelper": "Change helper",
+      "noHelper": "Not assigned",
+      "chooseHelper": "Choose a helper",
+      "save": "Save",
+      "cancel": "Cancel",
+      "empty": "No trips on this date."
     }
   },
   "status": {

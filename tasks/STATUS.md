@@ -107,7 +107,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T2.21 — Arrive at school, Return to school, End trip
 - [x] T2.22 — Sync status indicator
 - [x] T2.23 — Trip map tab
-- [ ] T2.30 — Today's trips page
+- [x] T2.30 — Today's trips page
 - [ ] T2.31 — Trip detail + audit timeline
 - [ ] T2.32 — Alerts inbox
 
