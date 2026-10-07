@@ -1,19 +1,21 @@
 import { formatTime } from '@sst/i18n';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ScrollView, View } from 'react-native';
 import { getLanguage } from '@/i18n';
 import { rpcError } from '@/lib/supabase';
 import { useHelperAction } from '@/queue/useHelperAction';
 import { StopSection } from '@/trip/StopSection';
-import { StudentRow } from '@/trip/StudentRow';
+import { StudentRow, studentName } from '@/trip/StudentRow';
+import { useDropAction } from '@/trip/useDropAction';
 import { useTrip } from '@/trip/useTrip';
 import { Banner } from '@/ui/Banner';
 import { Button } from '@/ui/Button';
 import { Spinner } from '@/ui/EmptyState';
 import { Screen } from '@/ui/Screen';
 import { Text } from '@/ui/Text';
+import { UndoSnackbar } from '@/ui/UndoSnackbar';
 import { colors, spacing } from '@/ui/tokens';
 
 export default function DropScreen() {
@@ -21,8 +23,11 @@ export default function DropScreen() {
   const router = useRouter();
   const locale = getLanguage();
   const { tripId } = useLocalSearchParams<{ tripId: string }>();
-  const { trip, students, groups, counts, stops, loading, error, refetch } = useTrip(tripId);
+  const { trip, students, groups, counts, stops, dropDistanceWarningM, loading, error, refetch } = useTrip(tripId);
   const run = useHelperAction();
+  const dropStudents = useDropAction(tripId, dropDistanceWarningM ?? 200);
+  const [undo, setUndo] = useState<{ message: string; studentIds: string[] } | null>(null);
+  const dismissUndo = useCallback(() => setUndo(null), []);
   const scrollRef = useRef<ScrollView>(null);
   const layouts = useRef<Record<string, number>>({});
   const scrolledTo = useRef<string | null>(null);
@@ -39,6 +44,25 @@ export default function DropScreen() {
     }
   }, [nextStopId, groups]);
 
+  const dropAt = async (rows: { student_id: string; name: string }[], stopId: string) => {
+    const ok = await dropStudents(rows, stops?.[stopId]);
+    if (ok) {
+      setUndo({
+        message: t('helper.drop.droppedToast', {
+          name: rows.length === 1 ? (rows[0]?.name ?? '') : String(rows.length),
+        }),
+        studentIds: rows.map((r) => r.student_id),
+      });
+    }
+  };
+
+  const undoLast = () => {
+    const current = undo;
+    setUndo(null);
+    if (!current) return;
+    for (const id of current.studentIds) void run('undo_dropped', { p_trip_id: tripId, p_student_id: id });
+  };
+
   if (loading) return <Spinner />;
   if (error || !trip) {
     return (
@@ -49,7 +73,6 @@ export default function DropScreen() {
   }
 
   const missing = (students ?? []).filter((s) => s.status === 'missing');
-  const drop = (studentId: string) => void run('mark_dropped', { p_trip_id: tripId, p_student_id: studentId });
 
   return (
     <Screen>
@@ -82,6 +105,22 @@ export default function DropScreen() {
               stop={stops?.[group.stop_id]}
               highlighted={group.stop_id === nextStopId}
               left={left}
+              headerAction={
+                left > 1 ? (
+                  <Button
+                    title={t('helper.drop.dropAll')}
+                    variant="secondary"
+                    onPress={() =>
+                      void dropAt(
+                        group.rows
+                          .filter((r) => r.status === 'boarded')
+                          .map((r) => ({ student_id: r.student_id, name: studentName(r) })),
+                        group.stop_id,
+                      )
+                    }
+                  />
+                ) : undefined
+              }
               onLayout={(e) => {
                 layouts.current[group.stop_id] = e.nativeEvent.layout.y;
               }}
@@ -105,7 +144,7 @@ export default function DropScreen() {
                       key={s.student_id}
                       student={s}
                       indicator={<View />}
-                      trailing={<Button title={t('helper.drop.dropped')} onPress={() => drop(s.student_id)} />}
+                      trailing={<Button title={t('helper.drop.dropped')} onPress={() => void dropAt([{ student_id: s.student_id, name: studentName(s) }], group.stop_id)} />}
                     />
                   ),
                 )}
@@ -116,6 +155,7 @@ export default function DropScreen() {
       <View style={{ paddingVertical: spacing[2] }}>
         <Button title={t('helper.drop.map')} variant="secondary" onPress={() => router.push(`/(helper)/trip/${tripId}/map`)} />
       </View>
+      {undo ? <UndoSnackbar message={undo.message} onUndo={undoLast} onDismiss={dismissUndo} /> : null}
     </Screen>
   );
 }
