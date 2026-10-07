@@ -50,7 +50,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T1.25 — Generate DB types
 
 ## Phase 1b — App and web foundation (landing pages, sign-in, dashboard CRUD)  ([phase-1-apps.md](phase-1-apps.md))
-- [ ] T1.30 — Supabase client (mobile)
+- [x] T1.30 — Supabase client (mobile)
 - [ ] T1.31 — Providers in the root layout
 - [ ] T1.32 — UI kit part 1: tokens, Screen, Button, Card
 - [ ] T1.33 — UI kit part 2: TextField, PhoneField, Banner, EmptyState, Spinner
