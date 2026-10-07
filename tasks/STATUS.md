@@ -40,7 +40,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T1.15 — RLS policies: trips and everything else + Realtime
 - [x] T1.16 — Seed data
 - [x] T1.17 — Test setup and "RLS on every table" test
-- [ ] T1.18 — RLS tests: guardians
+- [x] T1.18 — RLS tests: guardians
 - [ ] T1.19 — RLS tests: staff and cross-school
 - [ ] T1.20 — RPCs `get_my_context`, `set_my_locale`
 - [ ] T1.21 — RPCs: invites, guardian approval, staff ⚠ hard
