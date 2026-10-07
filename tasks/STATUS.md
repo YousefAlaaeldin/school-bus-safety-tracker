@@ -121,10 +121,10 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T3.07 — Edge Function `push-receipts` + cron
 - [x] T3.08 — Push registration + Android channel
 - [x] T3.09 — Notification tap routing + foreground display
-- [ ] T3.10 — Parent home: children cards
-- [ ] T3.11 — Parent live map
-- [ ] T3.12 — Report absence screen
-- [ ] T3.13 — Parent history
+- [x] T3.10 — Parent home: children cards
+- [x] T3.11 — Parent live map
+- [x] T3.12 — Report absence screen
+- [x] T3.13 — Parent history
 - [x] T3.14 — `ingest_pings` RPC
 - [x] T3.15 — Ping queue + uploader
 - [x] T3.16 — Background location task + start/stop with the trip ⚠ hard

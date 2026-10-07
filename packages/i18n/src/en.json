@@ -119,10 +119,58 @@
   },
   "parent": {
     "home": {
-      "title": "My children"
+      "title": "My children",
+      "morning": "Morning",
+      "afternoon": "Afternoon",
+      "track": "Track the bus",
+      "reportAbsence": "Report absence",
+      "noChildren": "No children are linked to your account yet."
     },
     "notifications": {
       "channelName": "Bus safety alerts"
+    },
+    "tabs": {
+      "home": "Home",
+      "history": "History",
+      "settings": "Settings"
+    },
+    "status": {
+      "scheduled": "Bus at {{time}}",
+      "boarded": "On {{bus}}",
+      "boardedEta": "On {{bus}}, arriving ~{{time}}",
+      "droppedOff": "Dropped off at {{time}}",
+      "arrivedSchool": "Arrived at school {{time}}",
+      "returned": "Returned to school",
+      "missing": "Not on the bus",
+      "absent": "Absent today",
+      "noBus": "No bus today"
+    },
+    "track": {
+      "ended": "Tracking has ended for this trip.",
+      "stale": "The bus location has not updated for over a minute. It may have a weak signal.",
+      "waiting": "Waiting for the bus location…",
+      "eta": "Arriving at your stop ~{{time}}",
+      "updated": "Updated {{seconds}}s ago"
+    },
+    "absence": {
+      "title": "Report absence",
+      "child": "Child",
+      "date": "Date",
+      "today": "Today",
+      "tomorrow": "Tomorrow",
+      "journeys": "Journeys",
+      "reason": "Reason (optional)",
+      "cutoffHelp": "Absences can be reported until shortly before the bus departs. After that, please contact the school.",
+      "submit": "Report absence",
+      "saved": "Absence reported.",
+      "upcoming": "Upcoming absences",
+      "none": "No upcoming absences."
+    },
+    "history": {
+      "title": "History",
+      "empty": "No trips in the last 14 days.",
+      "boardedAt": "Boarded {{time}}",
+      "droppedAt": "Dropped {{time}}"
     }
   },
   "helper": {
