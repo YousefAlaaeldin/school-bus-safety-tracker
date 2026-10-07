@@ -6,4 +6,6 @@ allowBuilds:
   esbuild: true
   unrs-resolver: false
   sharp: false
+  "@parcel/watcher": false
+  "@swc/core": false
 nodeLinker: hoisted
