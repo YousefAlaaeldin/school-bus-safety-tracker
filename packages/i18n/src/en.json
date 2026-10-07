@@ -394,6 +394,24 @@
         "approved": "Approved",
         "revoked": "Revoked"
       }
+    },
+    "import": {
+      "title": "Import students",
+      "help": "Upload a CSV file with students and their guardians. Download the template to see the columns.",
+      "template": "Download template",
+      "choose": "Choose CSV file",
+      "preview": "Preview",
+      "rows": "{{count}} rows",
+      "run": "Import",
+      "done": "Imported {{students}} students and {{links}} guardian links.",
+      "fixErrors": "Fix the highlighted rows and upload the file again. Nothing was imported.",
+      "row": "Row",
+      "errors": {
+        "NAME_EN_REQUIRED": "English name is required",
+        "NAME_AR_REQUIRED": "Arabic name is required",
+        "BAD_PHONE": "Phone number is not valid",
+        "BAD_RELATIONSHIP": "Relationship must be mother, father, guardian or other"
+      }
     }
   }
 }
