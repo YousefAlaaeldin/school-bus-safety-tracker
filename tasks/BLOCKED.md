@@ -15,6 +15,12 @@ Format:
 - Phone sign-in locally needs an SMS provider enabled, even for test-OTP numbers (`phone_provider_disabled` otherwise). I enabled `[auth.sms.twilio]` in `supabase/config.toml` with **dummy** credentials; the test_otp numbers never send an SMS. The real Twilio setup is H6.2.
 - I added `supabase` as a root devDependency (the CLI isn't on PATH on this machine), so `pnpm db:*` scripts work unchanged.
 
+## T1.62 — Stops page with map pin picker
+- Tried: nothing yet. T1.62 depends on H0.3 (Google Maps JavaScript API key), which is not ticked.
+- Error: dependency missing (human task). This also holds back T1.63, T1.64, T1.65 (they depend on T1.62 / T1.63).
+- Question: Create the Google Cloud project and a Maps JavaScript API key (restricted to localhost), put it in `apps/web/.env.local` as NEXT_PUBLIC_GOOGLE_MAPS_API_KEY, tick H0.3, then tell me to continue. Or say "build it without a key" and I'll build the pin picker so it shows a plain lat/lng form fallback when no key is set.
+- Answer (human):
+
 ## Device checks pending
 - T0.08: open the app in the Android emulator (`cd apps/mobile && npx expo start`, press `a`) and confirm it shows "OK". Android SDK/emulator was not set up when I ran this; the Android bundle builds and resolves @sst/shared and @sst/i18n.
 - T0.09: rebuild dev client (eas build --profile development) before testing. Note: expo-localization's plugin now takes `supportsRTL` as an option, so I set it there as well as in `extra.supportsRTL`; the expo-location options match skeletons §5.
