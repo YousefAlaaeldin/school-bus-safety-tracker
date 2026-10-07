@@ -124,7 +124,12 @@
   },
   "helper": {
     "home": {
-      "title": "رحلات اليوم"
+      "title": "رحلات اليوم",
+      "morning": "رحلة الصباح",
+      "afternoon": "رحلة الظهيرة",
+      "noTrips": "لا توجد رحلات اليوم.",
+      "students": "{{count}} طلاب",
+      "settings": "الإعدادات"
     }
   },
   "admin": {
@@ -519,6 +524,23 @@
       "invalid": "يرجى التحقق من الحقول المظللة.",
       "required": "مطلوب.",
       "range": "أدخل رقمًا صحيحًا ضمن النطاق المسموح."
+    }
+  },
+  "status": {
+    "trip": {
+      "scheduled": "مجدولة",
+      "roll_call": "التفقد",
+      "in_progress": "جارية",
+      "completed": "منتهية",
+      "cancelled": "ملغاة"
+    },
+    "student": {
+      "expected": "متوقع",
+      "absent_reported": "غائب",
+      "boarded": "في الحافلة",
+      "missing": "غير موجود",
+      "dropped": "تم الإنزال",
+      "returned_to_school": "أُعيد إلى المدرسة"
     }
   }
 }

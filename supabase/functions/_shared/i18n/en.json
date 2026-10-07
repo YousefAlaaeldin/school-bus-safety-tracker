@@ -124,7 +124,12 @@
   },
   "helper": {
     "home": {
-      "title": "Today's trips"
+      "title": "Today's trips",
+      "morning": "Morning trip",
+      "afternoon": "Afternoon trip",
+      "noTrips": "No trips today.",
+      "students": "{{count}} students",
+      "settings": "Settings"
     }
   },
   "admin": {
@@ -519,6 +524,23 @@
       "invalid": "Please check the highlighted fields.",
       "required": "Required.",
       "range": "Enter a whole number in the allowed range."
+    }
+  },
+  "status": {
+    "trip": {
+      "scheduled": "Scheduled",
+      "roll_call": "Roll call",
+      "in_progress": "In progress",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "student": {
+      "expected": "Expected",
+      "absent_reported": "Absent",
+      "boarded": "On board",
+      "missing": "Missing",
+      "dropped": "Dropped",
+      "returned_to_school": "Returned to school"
     }
   }
 }
