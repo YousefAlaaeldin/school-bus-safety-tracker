@@ -147,7 +147,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [ ] H4.1 — Ride-along test 👤
 
 ## Phase 5 — Hardening  ([phase-5-hardening.md](phase-5-hardening.md))
-- [ ] T5.01 — Location data purge job
+- [x] T5.01 — Location data purge job
 - [ ] T5.02 — Security regression tests
 - [ ] T5.03 — Sentry (mobile)
 - [ ] T5.04 — Sentry (web + Edge Functions logging)

@@ -733,6 +733,9 @@ isOneToOne: false
 "mark_returned_to_school":
 { Args: { "p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_student_id": string,"p_trip_id": string }; Returns: Json
                            },
+"purge_old_location_data":
+{ Args: Record<PropertyKey, never>; Returns: Json
+                           },
 "redeem_invite":
 { Args: { "p_code": string }; Returns: Json
                            },
@@ -744,6 +747,9 @@ isOneToOne: false
                            },
 "revoke_guardian_link":
 { Args: { "p_link_id": string }; Returns: undefined
+                           },
+"run_watchdogs":
+{ Args: Record<PropertyKey, never>; Returns: Json
                            },
 "set_boarded":
 { Args: { "p_boarded": boolean,"p_client_action_id": string,"p_device_time": string,"p_lat"?: number,"p_lng"?: number,"p_student_id": string,"p_trip_id": string }; Returns: Json
