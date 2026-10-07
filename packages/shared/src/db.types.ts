@@ -698,6 +698,9 @@ isOneToOne: false
 "generate_trips":
 { Args: { "p_service_date": string }; Returns: number
                            },
+"get_eta_work":
+{ Args: Record<PropertyKey, never>; Returns: Json
+                           },
 "get_my_context":
 { Args: Record<PropertyKey, never>; Returns: Json
                            },
