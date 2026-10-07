@@ -98,7 +98,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T2.12 — SQLite queue store + drain runner + `useHelperAction`
 - [x] T2.13 — `useTrip(tripId)` hook
 - [x] T2.14 — Helper home: today's trips
-- [ ] T2.15 — Trip router screen + Start trip
+- [x] T2.15 — Trip router screen + Start trip
 - [ ] T2.16 — Roll call screen (afternoon)
 - [ ] T2.17 — Roll call confirmation sheet
 - [ ] T2.18 — Drop list screen (afternoon)

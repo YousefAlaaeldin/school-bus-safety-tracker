@@ -130,6 +130,16 @@
       "noTrips": "No trips today.",
       "students": "{{count}} students",
       "settings": "Settings"
+    },
+    "trip": {
+      "start": "Start trip",
+      "route": "Route",
+      "bus": "Bus",
+      "studentsCount": "Students",
+      "firstStop": "First stop",
+      "locationNeeded": "Location permission is needed to start the trip.",
+      "completedTitle": "Trip completed",
+      "backHome": "Back to today's trips"
     }
   },
   "admin": {

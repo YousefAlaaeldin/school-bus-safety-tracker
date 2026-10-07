@@ -130,6 +130,16 @@
       "noTrips": "لا توجد رحلات اليوم.",
       "students": "{{count}} طلاب",
       "settings": "الإعدادات"
+    },
+    "trip": {
+      "start": "بدء الرحلة",
+      "route": "المسار",
+      "bus": "الحافلة",
+      "studentsCount": "عدد الطلاب",
+      "firstStop": "أول محطة",
+      "locationNeeded": "يلزم إذن الموقع لبدء الرحلة.",
+      "completedTitle": "انتهت الرحلة",
+      "backHome": "العودة إلى رحلات اليوم"
     }
   },
   "admin": {
