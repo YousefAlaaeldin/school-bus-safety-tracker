@@ -12,4 +12,5 @@ Format:
 ```
 
 ## Device checks pending
+- T0.08: open the app in the Android emulator (`cd apps/mobile && npx expo start`, press `a`) and confirm it shows "OK". Android SDK/emulator was not set up when I ran this; the Android bundle builds and resolves @sst/shared and @sst/i18n.
 <!-- executor adds "- T3.16: verify background pings arrive with screen locked" etc. -->
