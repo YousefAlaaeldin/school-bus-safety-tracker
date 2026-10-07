@@ -33,4 +33,5 @@ Format:
 - T2.12: rebuild dev client (eas build --profile development) before testing (expo-sqlite, expo-location, netinfo added).
 - T2.14: HELPER_A sees trips after running `select public.generate_trips(current_date)` in Studio on a weekday.
 - T2.22: in airplane mode tap 3 boards, the badge shows 3; turn airplane mode off, it syncs to 0 and the server shows 3 events.
+- T2.23: rebuild dev client (react-native-maps added). The map must render on Android (needs GOOGLE_MAPS_ANDROID_API_KEY in the build env) and iOS.
 <!-- executor adds "- T3.16: verify background pings arrive with screen locked" etc. -->
