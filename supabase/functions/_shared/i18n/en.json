@@ -263,6 +263,34 @@
   "admin": {
     "home": {
       "title": "School alerts"
+    },
+    "tabs": {
+      "alerts": "Alerts",
+      "settings": "Settings"
+    },
+    "alerts": {
+      "filterOpen": "Open",
+      "filterAll": "All",
+      "empty": "No alerts.",
+      "openCount": "{{count}} open alerts",
+      "openDashboard": "Open dashboard",
+      "acknowledge": "Acknowledge",
+      "acknowledged": "Acknowledged",
+      "students": "Students: {{names}}",
+      "reason": "Reason: {{reason}}",
+      "bus": "Bus: {{bus}}",
+      "severity": {
+        "info": "Info",
+        "warning": "Warning",
+        "critical": "Critical"
+      },
+      "roll_call_missing": "Students missing at roll call",
+      "no_show": "Student not picked up",
+      "student_returned": "Student returned to school",
+      "trip_forced_end": "Trip ended with students on board",
+      "lost_contact": "Lost contact with the bus",
+      "stationary": "Bus has not moved",
+      "overdue_trip": "Trip is overdue"
     }
   },
   "onboarding": {

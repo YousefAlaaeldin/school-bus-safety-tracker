@@ -263,6 +263,34 @@
   "admin": {
     "home": {
       "title": "تنبيهات المدرسة"
+    },
+    "tabs": {
+      "alerts": "التنبيهات",
+      "settings": "الإعدادات"
+    },
+    "alerts": {
+      "filterOpen": "غير مؤكدة",
+      "filterAll": "الكل",
+      "empty": "لا توجد تنبيهات.",
+      "openCount": "{{count}} تنبيهات مفتوحة",
+      "openDashboard": "فتح لوحة التحكم",
+      "acknowledge": "تأكيد الاستلام",
+      "acknowledged": "تم الاستلام",
+      "students": "الطلاب: {{names}}",
+      "reason": "السبب: {{reason}}",
+      "bus": "الحافلة: {{bus}}",
+      "severity": {
+        "info": "معلومة",
+        "warning": "تحذير",
+        "critical": "حرج"
+      },
+      "roll_call_missing": "طلاب غائبون عن التفقد",
+      "no_show": "طالب لم يتم اصطحابه",
+      "student_returned": "أُعيد طالب إلى المدرسة",
+      "trip_forced_end": "انتهت الرحلة مع وجود طلاب في الحافلة",
+      "lost_contact": "انقطع الاتصال بالحافلة",
+      "stationary": "الحافلة متوقفة",
+      "overdue_trip": "الرحلة متأخرة"
     }
   },
   "onboarding": {

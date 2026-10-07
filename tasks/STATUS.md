@@ -130,7 +130,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T3.16 — Background location task + start/stop with the trip ⚠ hard
 - [x] T3.17 — Location permission flow
 - [x] T3.18 — Localized permission strings + Android battery guidance
-- [ ] T3.19 — Admin alerts mode (mobile)
+- [x] T3.19 — Admin alerts mode (mobile)
 - [ ] H3.1 — Device test: background tracking and push 👤
 
 ## Phase 4 — "10 minutes away" alerts, watchdogs, live board  ([phase-4-eta-watchdogs.md](phase-4-eta-watchdogs.md))
