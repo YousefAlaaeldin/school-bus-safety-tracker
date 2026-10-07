@@ -1,6 +1,7 @@
 import { hasLocale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import { GuardiansPanel } from '@/components/dashboard/GuardiansPanel';
 import { StudentForm } from '@/components/dashboard/StudentForm';
 import { routing } from '@/i18n/routing';
 import { requireAdmin } from '@/lib/auth/requireAdmin';
@@ -37,10 +38,17 @@ export default async function EditStudentPage({
     photoUrl = data?.signedUrl ?? null;
   }
 
+  const { data: links } = await supabase
+    .from('guardian_links')
+    .select('id, guardian_phone, guardian_user_id, relationship, status, can_track')
+    .eq('student_id', studentId)
+    .order('created_at');
+
   return (
     <div className="flex flex-col gap-6">
       <h1 className="text-2xl font-bold">{t('editTitle')}</h1>
       <StudentForm schoolId={schoolId} student={student} photoUrl={photoUrl} />
+      <GuardiansPanel studentId={studentId} schoolId={schoolId} links={links ?? []} />
     </div>
   );
 }

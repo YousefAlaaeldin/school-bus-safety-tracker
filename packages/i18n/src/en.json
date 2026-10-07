@@ -361,6 +361,39 @@
         "nameRequired": "This name is required.",
         "uploadFailed": "The photo could not be uploaded."
       }
+    },
+    "guardians": {
+      "title": "Guardians",
+      "phone": "Phone",
+      "relationship": "Relationship",
+      "status": "Status",
+      "signedUp": "Signed up",
+      "canTrack": "Can track the bus",
+      "yes": "Yes",
+      "no": "No",
+      "empty": "No guardians yet.",
+      "add": "Add guardian",
+      "invalidPhone": "Enter a valid phone number.",
+      "approve": "Approve",
+      "invite": "Create invite code",
+      "revoke": "Revoke",
+      "revokeConfirm": "Revoke this guardian's access to the child?",
+      "inviteTitle": "Invite code",
+      "inviteLink": "Invite link",
+      "print": "Print",
+      "close": "Close",
+      "cancel": "Cancel",
+      "relationships": {
+        "mother": "Mother",
+        "father": "Father",
+        "guardian": "Guardian",
+        "other": "Other"
+      },
+      "statuses": {
+        "pending": "Pending",
+        "approved": "Approved",
+        "revoked": "Revoked"
+      }
     }
   }
 }

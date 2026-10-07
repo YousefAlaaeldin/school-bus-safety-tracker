@@ -361,6 +361,39 @@
         "nameRequired": "هذا الاسم مطلوب.",
         "uploadFailed": "تعذّر رفع الصورة."
       }
+    },
+    "guardians": {
+      "title": "أولياء الأمور",
+      "phone": "الهاتف",
+      "relationship": "صلة القرابة",
+      "status": "الحالة",
+      "signedUp": "مسجل في التطبيق",
+      "canTrack": "يمكنه تتبع الحافلة",
+      "yes": "نعم",
+      "no": "لا",
+      "empty": "لا يوجد أولياء أمور بعد.",
+      "add": "إضافة ولي أمر",
+      "invalidPhone": "أدخل رقم هاتف صحيحًا.",
+      "approve": "قبول",
+      "invite": "إنشاء رمز دعوة",
+      "revoke": "إلغاء الارتباط",
+      "revokeConfirm": "هل تريد إلغاء صلاحية ولي الأمر هذا للوصول إلى الطفل؟",
+      "inviteTitle": "رمز الدعوة",
+      "inviteLink": "رابط الدعوة",
+      "print": "طباعة",
+      "close": "إغلاق",
+      "cancel": "إلغاء",
+      "relationships": {
+        "mother": "أم",
+        "father": "أب",
+        "guardian": "ولي أمر",
+        "other": "أخرى"
+      },
+      "statuses": {
+        "pending": "قيد الانتظار",
+        "approved": "مقبول",
+        "revoked": "ملغى"
+      }
     }
   }
 }
