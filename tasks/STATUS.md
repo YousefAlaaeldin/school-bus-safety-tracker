@@ -16,7 +16,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T0.08 — Expo app scaffold
 - [x] T0.09 — App config, EAS profiles, env example
 - [x] T0.10 — Mobile i18n + RTL bootstrap ⚠ hard
-- [ ] T0.11 — Arabic font and base `Text` component
+- [x] T0.11 — Arabic font and base `Text` component
 - [x] T0.12 — Next.js scaffold with Tailwind
 - [x] T0.13 — Web i18n routing (`ar` default, `en`), `dir` attribute
 - [x] T0.14 — CI workflow
