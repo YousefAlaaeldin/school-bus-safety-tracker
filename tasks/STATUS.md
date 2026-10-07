@@ -56,7 +56,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T1.33 — UI kit part 2: TextField, PhoneField, Banner, EmptyState, Spinner
 - [x] T1.34 — Role resolution logic (pure + tests)
 - [x] T1.35 — Welcome (landing) screen
-- [ ] T1.36 — Phone entry screen
+- [x] T1.36 — Phone entry screen
 - [ ] T1.37 — OTP screen
 - [ ] T1.38 — AuthGate: routing after sign-in ⚠ hard
 - [ ] T1.39 — Onboarding screens
