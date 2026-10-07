@@ -32,7 +32,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [x] T1.07 — Trips, trip students, trip events, client actions
 - [x] T1.08 — Positions, pings, absences, push tokens, outbox, alerts
 - [x] T1.09 — Phone and point utilities (SQL + TS twins)
-- [ ] T1.10 — Triggers: new user, guardian link attach, assignment stop check ⚠ hard
+- [x] T1.10 — Triggers: new user, guardian link attach, assignment stop check ⚠ hard
 - [ ] T1.11 — RLS helper functions
 - [ ] T1.12 — RLS policies: schools, calendar, profiles, memberships, staff invites
 - [ ] T1.13 — RLS policies: students, guardian links, invite codes + photo bucket
