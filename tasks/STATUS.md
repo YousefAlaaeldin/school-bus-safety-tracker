@@ -19,7 +19,7 @@ Tick `- [x]` when a task is done (see README.md). `H` = human task 👤 (the hum
 - [ ] T0.11 — Arabic font and base `Text` component
 - [x] T0.12 — Next.js scaffold with Tailwind
 - [x] T0.13 — Web i18n routing (`ar` default, `en`), `dir` attribute
-- [ ] T0.14 — CI workflow
+- [x] T0.14 — CI workflow
 - [ ] H0.4 — First development builds on real devices 👤
 
 ## Phase 1a — Database foundation  ([phase-1-database.md](phase-1-database.md))
