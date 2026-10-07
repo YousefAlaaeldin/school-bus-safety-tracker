@@ -39,7 +39,7 @@ export function ChildCard({ child }: { child: Child }) {
     <Card style={{ gap: spacing[4] }}>
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing[3] }}>
         <StudentPhoto student={child} size={56} />
-        <Text variant="title" style={{ flex: 1 }}>{name}</Text>
+        <Text variant="title" numberOfLines={2} style={{ flex: 1 }}>{name}</Text>
       </View>
       <JourneyLine label={t('parent.home.morning')} journey={child.morning} />
       <JourneyLine label={t('parent.home.afternoon')} journey={child.afternoon} />

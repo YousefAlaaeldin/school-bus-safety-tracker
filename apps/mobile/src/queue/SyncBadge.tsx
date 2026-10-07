@@ -28,6 +28,13 @@ export function SyncBadge() {
     <>
       <Pressable
         accessibilityRole="button"
+        accessibilityLabel={
+          failed.length > 0
+            ? t('helper.sync.failedTitle')
+            : !online
+              ? t('helper.sync.offline')
+              : String(pendingCount)
+        }
         disabled={failed.length === 0}
         onPress={() => setOpen(true)}
         style={{
@@ -39,7 +46,7 @@ export function SyncBadge() {
           borderWidth: 1,
           borderRadius: radius,
           paddingHorizontal: spacing[3],
-          minHeight: 36,
+          minHeight: 44,
         }}
       >
         {!online ? <Text>☁️</Text> : null}
@@ -47,7 +54,9 @@ export function SyncBadge() {
         {pendingCount > 0 ? <ActivityIndicator size="small" color={colors.primary} /> : null}
         {pendingCount > 0 ? <Text variant="caption" weight="bold">{pendingCount}</Text> : null}
         {failed.length > 0 ? (
-          <View style={{ width: 12, height: 12, borderRadius: 6, backgroundColor: colors.danger }} />
+          <View style={{ width: 20, height: 20, borderRadius: 10, backgroundColor: colors.danger, alignItems: 'center', justifyContent: 'center' }}>
+            <Text variant="caption" weight="bold" style={{ color: colors.onPrimary, lineHeight: 16 }}>!</Text>
+          </View>
         ) : null}
       </Pressable>
 

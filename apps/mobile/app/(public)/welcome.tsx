@@ -18,6 +18,7 @@ function LanguageToggle() {
           key={code}
           testID={`welcome-lang-${code}`}
           accessibilityRole="button"
+          accessibilityLabel={t(code === 'ar' ? 'common.arabic' : 'common.english')}
           accessibilityState={{ selected: current === code }}
           onPress={() => void setLanguage(code)}
           style={{ minHeight: 44, justifyContent: 'center', paddingHorizontal: spacing[2] }}

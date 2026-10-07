@@ -9,10 +9,10 @@ export default function Index() {
   return (
     <View style={{ flex: 1, alignItems: 'stretch', justifyContent: 'center', padding: 24, gap: 16 }}>
       <Text variant="title">{t('common.appName')}</Text>
-      <Pressable onPress={() => void setLanguage('ar')}>
+      <Pressable accessibilityRole="button" accessibilityLabel={t('common.arabic')} onPress={() => void setLanguage('ar')}>
         <Text variant="button">{t('common.arabic')}</Text>
       </Pressable>
-      <Pressable onPress={() => void setLanguage('en')}>
+      <Pressable accessibilityRole="button" accessibilityLabel={t('common.english')} onPress={() => void setLanguage('en')}>
         <Text variant="button">{t('common.english')}</Text>
       </Pressable>
     </View>

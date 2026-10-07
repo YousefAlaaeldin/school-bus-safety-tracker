@@ -112,6 +112,7 @@ export function StudentRow({ student, onPress, onLongPress, trailing, struck, in
         testID={`student-row-${student.student_id}`}
         accessibilityRole={onPress ? 'button' : undefined}
         accessibilityLabel={studentName(student)}
+        accessibilityValue={{ text: t(`status.student.${student.status}`) }}
         accessibilityState={{ checked: boarded }}
         disabled={!onPress && !onLongPress}
         onPress={onPress}
@@ -120,7 +121,7 @@ export function StudentRow({ student, onPress, onLongPress, trailing, struck, in
       >
         <StudentPhoto student={student} />
         <View style={{ flex: 1 }}>
-          <Text variant="body" weight="medium" style={struck ? { textDecorationLine: 'line-through' } : undefined}>
+          <Text variant="body" weight="medium" numberOfLines={2} style={struck ? { textDecorationLine: 'line-through' } : undefined}>
             {studentName(student)}
           </Text>
           {absent ? <Text variant="caption" style={{ color: colors.muted }}>{t('helper.rollCall.absent')}</Text> : null}

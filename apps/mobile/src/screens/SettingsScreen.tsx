@@ -23,6 +23,7 @@ function RadioRow({ label, selected, onPress }: { label: string; selected: boole
   return (
     <Pressable
       accessibilityRole="radio"
+      accessibilityLabel={label}
       accessibilityState={{ selected }}
       onPress={onPress}
       style={{ minHeight: 48, flexDirection: 'row', alignItems: 'center', gap: spacing[3] }}

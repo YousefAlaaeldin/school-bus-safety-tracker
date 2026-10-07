@@ -42,6 +42,7 @@ export function UndoSnackbar({ message, onUndo, onDismiss, durationMs = 10_000 }
       <Text variant="body" style={{ color: colors.onPrimary, flex: 1 }}>{message}</Text>
       <Pressable
         accessibilityRole="button"
+        accessibilityLabel={t('helper.drop.undo')}
         onPress={onUndo}
         style={{ minHeight: 48, minWidth: 64, alignItems: 'center', justifyContent: 'center' }}
       >
