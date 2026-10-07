@@ -84,5 +84,15 @@
       "title": "{{bus}} trip is overdue",
       "body": "Started at {{time}} and has not ended."
     }
+  },
+  "welcome": {
+    "tagline": "Safe rides, every day.",
+    "chooseRole": "How will you use the app?",
+    "parentTitle": "I'm a parent",
+    "parentSubtitle": "Follow your child's bus and get updates",
+    "helperTitle": "I'm a bus helper",
+    "helperSubtitle": "Do roll call and tick children on and off",
+    "staffTitle": "School staff",
+    "staffSubtitle": "Dashboard and school alerts"
   }
 }
