@@ -12,3 +12,6 @@ supabase/.temp/
 supabase/.branches/
 supabase/functions/.env
 coverage/
+
+# IDE
+.idea/
